@@ -1,0 +1,98 @@
+.hexagon {
+    position: relative;
+    width: 200px;
+    height: 115.47px;
+    margin: 57.74px 0;
+    background-image: url(http://csshexagon.com/img/meow.jpg);
+    background-size: auto 219.3931px;
+    background-position: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-left: solid 5px #0073bf;
+    border-right: solid 5px #0073bf;
+    transform: rotate(90deg);
+}
+
+.hexTop,
+.hexBottom {
+    position: absolute;
+    z-index: 1;
+    width: 141.42px;
+    height: 141.42px;
+    overflow: hidden;
+    -webkit-transform: scaleY(0.5774) rotate(-45deg);
+    -ms-transform: scaleY(0.5774) rotate(-45deg);
+    transform: scaleY(0.5774) rotate(-45deg);
+    background: inherit;
+    left: 24.29px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/*counter transform the bg image on the caps*/
+
+.hexTop:after,
+.hexBottom:after {
+    content: "";
+    position: absolute;
+    width: 190.0000px;
+    height: 109.69655114602891px;
+    -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
+    -ms-transform: rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
+    transform: rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
+    -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    transform-origin: 0 0;
+    background: inherit;
+}
+
+.hexTop {
+    top: -70.7107px;
+    border-top: solid 7.0711px #0073bf;
+    border-right: solid 7.0711px #0073bf;
+}
+
+.hexTop:after {
+    background-position: center top;
+}
+
+.hexBottom {
+    bottom: -70.7107px;
+    border-bottom: solid 7.0711px #0073bf;
+    border-left: solid 7.0711px #0073bf;
+}
+
+.hexBottom:after {
+    background-position: center bottom;
+}
+
+.hexagon:after {
+    content: "";
+    position: absolute;
+    top: 2.8868px;
+    left: 0;
+    width: 190.0000px;
+    height: 109.6966px;
+    z-index: 2;
+    background: inherit;
+}
+
+p,
+h2 {
+    width: 200px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font: 40px 'Hind', sans-serif;
+    font-weight: bold;
+    color: #0073BF;
+}
+
+section {
+    margin: 5%;
+}
+
+h2 {
+    padding-top: 2%;
+}

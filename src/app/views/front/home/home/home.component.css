@@ -1,0 +1,40 @@
+h1 {
+    color: #0073BF;
+    font: 40px 'Hind', sans-serif;
+    font-weight: bolder;
+}
+
+h2 {
+    font: 30px 'Hind', sans-serif;
+    font-weight: normal;
+}
+
+span {
+    color: #0FB052;
+}
+
+button {
+    background: rgb(0, 115, 191);
+    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+    font: 20px 'Hind', sans-serif;
+    font-weight: bold;
+}
+
+.bg {
+    background-image: url("../../../../../assets/bg.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    height: 600px;
+    background-size: contain;
+}
+
+section {
+    width: 50%;
+    padding-top: 15%;
+    padding-left: 5%;
+}

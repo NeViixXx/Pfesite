@@ -5,4 +5,66 @@ button {
     border: none;
     border-radius: 10px;
     margin: 20px;
+    font: 1rem 'Hind', sans-serif;
+}
+
+nav {
+    font: 1rem 'Hind', sans-serif;
+    justify-content: space-around;
+    position: sticky;
+    top: 0;
+}
+
+.navbar-nav {
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-item {
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.nav-item>a {
+    line-height: 3rem;
+    padding: 0 .8rem;
+    letter-spacing: 1px;
+    font-size: .95rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: .5s;
+}
+
+.nav-item:after {
+    content: "";
+    position: absolute;
+    background-color: #0073BF;
+    height: 4px;
+    width: 0;
+    left: 0;
+    bottom: -1px;
+    border-radius: 8px;
+    transition: .5s;
+}
+
+.nav-item:hover>a {
+    transform: scale(1.1);
+    color: #0073BF;
+}
+
+.nav-item:hover:after {
+    width: 100%;
+}
+
+.nav-item>.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 10rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: .5s;
 }

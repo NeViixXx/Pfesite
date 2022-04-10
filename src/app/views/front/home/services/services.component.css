@@ -3,13 +3,12 @@
     width: 200px;
     height: 115.47px;
     margin: 57.74px 0;
-    background-image: url(http://csshexagon.com/img/meow.jpg);
+    background-image: url("../../../../../assets/apropos.png");
     background-size: auto 219.3931px;
     background-position: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-left: solid 5px #0073bf;
     border-right: solid 5px #0073bf;
-    transform: rotate(90deg);
 }
 
 .hexTop,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-contact',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+dataArray: any
+  constructor(private http : HttpService) {
+    this.http.getallcategory().subscribe(data => this.dataArray=data);
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
   }

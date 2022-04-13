@@ -1,1 +1,14 @@
-<p>category works!</p>
+<h1>Nos Formations</h1>
+<div class="container">
+    <div class="col-3">
+        <div class="hexagon" *ngFor="let e of Category">
+            <div class="hexagon-shape">
+                <img src="images/testi3.jpg" alt="">
+                <div class="content">
+
+                    <h2>{{e.name}}</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>

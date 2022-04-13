@@ -12,6 +12,7 @@ nav {
     font: 1rem 'Hind', sans-serif;
     justify-content: space-around;
     position: sticky;
+    z-index: 3;
     top: 0;
 }
 

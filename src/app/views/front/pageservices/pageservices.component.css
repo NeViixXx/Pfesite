@@ -1,0 +1,42 @@
+h1 {
+    color: #0073BF;
+    font: 2.5em 'Hind', sans-serif;
+    font-weight: bolder;
+}
+
+h2 {
+    color: #0073BF;
+    font: 2em 'Hind', sans-serif;
+    font-weight: normal;
+}
+
+button {
+    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+    font: 1.5rem 'Hind', sans-serif;
+    width: 10em;
+}
+
+#desc {
+    width: 50%;
+    padding-top: 15%;
+    padding-left: 5%;
+}
+
+.line {
+    content: "";
+    background-color: #0073BF;
+    height: .5em;
+    width: 10em;
+    border-radius: 8px;
+}
+
+img {
+    position: relative;
+    padding-top: 15%;
+    padding-left: 5%;
+    left: 30%;
+}

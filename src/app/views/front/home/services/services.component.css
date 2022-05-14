@@ -1,97 +1,61 @@
-.hexagon {
+.hex {
+    margin: 0 auto;
+    width: 180px;
+    height: 150px;
+    max-width: 1200px;
     position: relative;
-    width: 200px;
-    height: 115.47px;
-    margin: 57.74px 0;
-    background-image: url("../../../../../assets/apropos.png");
-    background-size: auto 219.3931px;
-    background-position: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    border-left: solid 5px #0073bf;
-    border-right: solid 5px #0073bf;
+    /* width * 0.866 */
+    background: #00C4FF;
+    box-sizing: border-box;
+    clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+    align-items: center;
+    justify-content: center;
 }
 
-.hexTop,
-.hexBottom {
+
+/* outline */
+
+.hex-background {
+    position: relative;
+    background-color: white;
+    /*color of the main-background*/
+    top: 2px;
+    /* equal to border thickness */
+    left: 2px;
+    /* equal to border thickness */
+    width: 176px;
+    /* container height - (border thickness * 2) */
+    height: 146px;
+    /* container height - (border thickness * 2) */
+    clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
+}
+
+
+/* outline */
+
+.hex img {
     position: absolute;
-    z-index: 1;
-    width: 141.42px;
-    height: 141.42px;
-    overflow: hidden;
-    -webkit-transform: scaleY(0.5774) rotate(-45deg);
-    -ms-transform: scaleY(0.5774) rotate(-45deg);
-    transform: scaleY(0.5774) rotate(-45deg);
-    background: inherit;
-    left: 24.29px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
 
-
-/*counter transform the bg image on the caps*/
-
-.hexTop:after,
-.hexBottom:after {
-    content: "";
-    position: absolute;
-    width: 190.0000px;
-    height: 109.69655114602891px;
-    -webkit-transform: rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
-    -ms-transform: rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
-    transform: rotate(45deg) scaleY(1.7321) translateY(-54.8483px);
-    -webkit-transform-origin: 0 0;
-    -ms-transform-origin: 0 0;
-    transform-origin: 0 0;
-    background: inherit;
-}
-
-.hexTop {
-    top: -70.7107px;
-    border-top: solid 7.0711px #0073bf;
-    border-right: solid 7.0711px #0073bf;
-}
-
-.hexTop:after {
-    background-position: center top;
-}
-
-.hexBottom {
-    bottom: -70.7107px;
-    border-bottom: solid 7.0711px #0073bf;
-    border-left: solid 7.0711px #0073bf;
-}
-
-.hexBottom:after {
-    background-position: center bottom;
-}
-
-.hexagon:after {
-    content: "";
-    position: absolute;
-    top: 2.8868px;
-    left: 0;
-    width: 190.0000px;
-    height: 109.6966px;
-    z-index: 2;
-    background: inherit;
-}
-
-p,
-h2 {
-    width: 200px;
+.contenu {
+    justify-content: center;
     text-align: center;
+    align-items: center;
+    margin-top: 1rem;
 }
 
-h1 {
+.title {
     text-align: center;
-    font: 40px 'Hind', sans-serif;
+    font: 2.3rem 'Roboto', sans-serif;
     font-weight: bold;
+    padding-top: 8rem;
     color: #0073BF;
 }
 
-section {
-    margin: 5%;
-}
-
-h2 {
-    padding-top: 2%;
+#services {
+    padding-top: 50px;
 }

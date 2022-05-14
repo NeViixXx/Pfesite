@@ -1,24 +1,66 @@
-button {
-    background: rgb(0, 196, 255);
-    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    margin: 20px;
-    font: 1rem 'Hind', sans-serif;
+/* The container <div> - needed to position the dropdown content */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
 }
 
+.dropbtn {
+    text-decoration: none;
+    color: black;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+
+.dropdown-content {
+    display: none;
+    margin-left: 20px;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+
+/* Links inside the dropdown */
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+
+/* Change color of dropdown links on hover */
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+
+/* Show the dropdown menu on hover */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
 nav {
-    font: 1rem 'Hind', sans-serif;
-    justify-content: space-around;
-    position: sticky;
-    z-index: 3;
-    top: 0;
+    font: 1rem 'Roboto', sans-serif;
+    z-index: 1000;
 }
 
 .navbar-nav {
+    display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .nav-item {
@@ -37,6 +79,12 @@ nav {
     align-items: center;
     justify-content: space-between;
     transition: .5s;
+    z-index: 1000;
+}
+
+.nav-item>a.active {
+    color: #0073BF;
+    transform: scale(1.1);
 }
 
 .nav-item:after {
@@ -62,10 +110,167 @@ nav {
 
 .nav-item>.dropdown {
     position: absolute;
+    position: relative;
     top: 100%;
     left: 0;
     width: 10rem;
     opacity: 0;
     pointer-events: none;
     transition: .5s;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu a {
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+.fixed {
+    position: fixed;
+    width: 100%;
+    transition: 0.2s linear;
+    top: 0px;
+}
+
+.nofixed {
+    position: static;
+    background: transparent;
+    transition: 0.2s linear;
+    top: -50px;
+}
+
+.btn {
+    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 20px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    float: right;
+    margin-left: 200px;
+}
+
+.btn:hover {
+    transition: 1s ease-in-out;
+    background: #0073BF;
+}
+
+.btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+
+/*
+.top {
+    position: fixed;
+    display: inline-block;
+    font-size: 40px;
+    border: 0;
+    right: 5%;
+    bottom: 5%;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    cursor: pointer;
+    color: #00C4FF;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+}
+*/
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.footer {
+    display: flex;
+    padding: 30px;
+    bottom: 0;
+    color: #fff;
+    background-color: #1A374D;
+    font-family: 'Roboto', sans-serif;
+}
+
+.l-footer {
+    margin-right: 1.25em;
+    margin-bottom: 2em;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer li {
+    line-height: 2em;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.r-footer {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.r-footer>* {
+    flex: 1 50%;
+    margin-right: 1.25em;
+}
+
+.box a {
+    color: #dddddd;
+}
+
+.h-box {
+    column-count: 1;
+    column-gap: 1em;
+}
+
+.b-footer {
+    text-align: center;
+    color: #fff;
+    padding-top: 50px;
+}
+
+.l-footer p {
+    padding-right: 20%;
+    color: #dddddd;
+}
+
+@media screen and (min-width: 600px) {
+    .r-footer>* {
+        flex: 1;
+    }
+    .features {
+        flex-grow: 1;
+    }
+    .l-footer {
+        flex: 1 0px;
+    }
+    .r-footer {
+        flex: 1 0px;
+    }
 }

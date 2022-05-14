@@ -1,0 +1,12 @@
+input {
+    width: 19em;
+    margin: 1em;
+}
+
+input.date {
+    width: 100%;
+}
+
+.card {
+    max-width: 100%;
+}

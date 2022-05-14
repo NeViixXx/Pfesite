@@ -1,0 +1,57 @@
+<h1 class="text-center text-dark">Modifier</h1>
+<div class="card shadow">
+    <div class="card-body">
+
+        <form [formGroup]="editformation" (ngSubmit)="edit()">
+            <div class="form-group m-3">
+                <label for="name">Nom du formation:</label>
+                <input type="text" class="form-control" formControlName="name" required>
+            </div>
+
+            <div class="form-group m-3">
+                <label for="name">Description:</label>
+                <textarea type="text" class="form-control" formControlName="Description" required></textarea>
+            </div>
+            <div class="form-group m-3">
+                <label for="name">Objectif:</label>
+                <textarea type="text" class="form-control" formControlName="Objectif" required></textarea>
+            </div>
+            <div class="form-group m-3">
+                <label for="name">Informations:</label>
+                <textarea type="text" class="form-control" formControlName="Informations" required></textarea>
+            </div>
+            <div class="form-group m-3">
+                <label for="name">Programme:</label>
+                <textarea type="text" class="form-control" formControlName="Programme" required></textarea>
+            </div>
+            <div class="row">
+                <div class="form-group col m-3">
+                    <label for="name">Duree:</label>
+                    <input type="number" class="form-control" formControlName="Duree" required>
+                </div>
+                <div class="form-group col m-3">
+                    <label for="name">Horraire:</label>
+                    <input type="text" class="form-control" formControlName="Horraire" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col m-3">
+                    <label for="name">Certificat:</label>
+                    <input type="text" class="form-control" formControlName="Certificat" required>
+                </div>
+                <div class="form-group col m-3">
+                    <label for="exampleFormControlSelect1">Category :</label>
+                    <select class="form-control" id="exampleFormControlSelect1" formControlName="category" required>
+          <option *ngFor="let e of Categoryform" value="{{e.name}}" >{{e.name}}</option>
+        </select>
+                </div>
+            </div>
+            <div class="form-group m-3">
+                <label for="formFile" class="form-label">Image du service : </label>
+                <input class="form-control" type="file" id="file " name="Image" (change)="onFileSelected($event)" formControlName="Image" accept=".pdf,.jpg,.jpeg">
+            </div>
+
+            <button class="btn btn-success m-3" type="submit" [disabled]="editformation.invalid">Modifier</button>
+        </form>
+    </div>
+</div>

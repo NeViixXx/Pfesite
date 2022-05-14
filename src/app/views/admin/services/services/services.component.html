@@ -1,0 +1,36 @@
+<h1 class="text-dark text-center">Services</h1>
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <a style="float: right;" routerLink="AjoutService">
+            <i class="bi bi-plus-square-fill me-2"></i>
+        </a>
+        <div class="container-fluid d-inline-flex flex-wrap justify-content-center">
+            <ul class="col-lg-4" *ngFor="let s of Services;index as i">
+                <div class="hexagon mb-4">
+                    <li class="hex shadow-lg">
+                        <div class=" hex-background">
+                            <img src={{s.Image}}>
+                        </div>
+                    </li>
+                    <div class="contenu">
+                        <h1>
+                            {{s.name}}
+                        </h1>
+                        <div class="container  align-items-center">
+                            <div class="align-self-center m-2 ">
+                                <a class="btn btn-sm btn-success p-2 pb-3 col-md-6 " routerLink="edit/{{s._id}} ">
+                            Modifier
+                        </a>
+                            </div>
+                            <div class="align-self-center m-2">
+                                <button class="btn btn-sm btn-danger p-2 pb-3 col-md-6 " (click)="delete(s._id,i) ">
+                      Supprimer
+              </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>

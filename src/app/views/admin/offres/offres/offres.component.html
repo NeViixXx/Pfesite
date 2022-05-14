@@ -1,0 +1,183 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h2 class="text-primary text-center">Tous les Offres</h2>
+    </div>
+
+
+    <div class="card-body">
+        <a routerLink="AjoutOffre" style="float: right;"><i class="bi bi-plus-square-fill me-2"></i></a>
+        <div class="table table-responsive">
+            <table class="table " id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Nom d'Offre</th>
+                        <th>Niveau</th>
+                        <th>Postes</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Type</th>
+                        <th>Nom d'Offre</th>
+                        <th>Niveau</th>
+                        <th>Postes</th>
+
+                        <th>Actions</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+
+                    <tr *ngFor="let item of Offres;index as i">
+                        <td>{{item.Type}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.Niveau}}</td>
+                        <td>{{item.Postes}}</td>
+
+                        <td class="d-flex justify-content-around">
+                            <button class="btn btn-success" (click)="getdata(item.Type,item.name,item.Niveau,item.Postes,item.Description,item._id)" data-toggle="modal" data-target="#exampleModal">Modifier</button>
+                            <button class="btn btn-info" (click)="details(item.Type,item.name,item.Niveau,item.Postes,item.Description,item._id)" data-toggle="modal" data-target="#detailsModal">Details</button>
+                            <button class="btn btn-danger" (click)="delete(item._id,i)">Supprimer</button>
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- details Modal -->
+<div class="modal fade" id="detailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{dataOffre.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+                <h1>{{dataOffre.Type}}</h1>
+                <h1>{{dataOffre.name}}</h1>
+                <h2>{{dataOffre.Niveau}}</h2>
+                <h3>{{dataOffre. Postes}}</h3>
+                <p>{{dataOffre.Description}}</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{dataOffre.name}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+            </div>
+            <div class="modal-body">
+                <!-- form update start here -->
+                <form #f="ngForm" (ngSubmit)="updateoffre(f)">
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Type</label>
+                        <select class="form-control" name="Type" [(ngModel)]="dataOffre.Type" #Type="ngModel" required ngModel>
+                <option value="Stage" >Offre de Stage</option>
+                <option value="Emploi" >Offre d'emploi</option>
+              </select>
+                    </div>
+
+                    <div class="alert alert-danger" *ngIf="Type.errors?.['required'] && Type.touched">
+                        Type est Obligatoire
+                    </div>
+
+
+                    <!-- lastName validation end here -->
+
+                    <!-- lastName validation start here -->
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Nom du l'Offre</label>
+                        <input type="text" class="form-control" placeholder="Nom du l'Offre" [(ngModel)]="dataOffre.name" required name="name" #name="ngModel" minlength="2" maxlength="20" ngModel>
+                    </div>
+
+                    <div class="alert alert-danger" *ngIf="name.errors?.['required'] && name.touched">
+                        Nom Obligatoire
+                    </div>
+                    <div class="alert alert-danger" *ngIf="name.errors?.['minlength'] && name.touched">
+                        Le nom est trés court
+                    </div>
+
+                    <!-- lastName validation end here -->
+
+                    <!-- Email validation start here -->
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Niveau</label>
+                        <input type="text" class="form-control" placeholder="Niveau d'études " [(ngModel)]="dataOffre.Niveau" required name="Niveau" #Niveau="ngModel" ngModel>
+                    </div>
+
+                    <div class="alert alert-danger" *ngIf="Niveau.errors?.['required'] && Niveau.touched">
+                        Niveau is required
+                    </div>
+
+
+                    <!-- Email validation end here -->
+
+                    <!-- age validation start here -->
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Postes</label>
+                        <input type="number" class="form-control" placeholder="Postes" [(ngModel)]="dataOffre.Postes" required name="Postes" #Postes="ngModel" ngModel>
+                    </div>
+                    <!--
+          <div class="alert alert-danger" *ngIf="age.errors?.required && age.touched">
+              age is required
+          </div>
+          -->
+                    <!-- age validation end here -->
+
+
+                    <!-- Phone validation start here -->
+
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1"> Description</label>
+                        <textarea type="number" class="form-control" placeholder=" Description du l'offre" [(ngModel)]="dataOffre.Description" required name="Description" #Description="ngModel" ngModel></textarea>
+                    </div>
+
+                    <div class="alert alert-danger" *ngIf="Description.errors?.['required'] && Description.touched">
+                        Description est Obligatoire
+                    </div>
+
+                    <!-- Phone validation end here
+          <div class="alert alert-success" *ngIf="messageSuccess">
+              {{messageSuccess}}
+          </div>
+
+          -->
+
+
+                    <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Modifier</button>
+                </form>
+
+
+
+                <!-- form update end here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,6 +10,7 @@ import { HttpService } from 'src/app/services/http.service';
 export class FormationsComponent implements OnInit {
   name:any
   cat:any
+
   constructor(private http:HttpService , private aroute:ActivatedRoute ) {
     this.aroute.params.subscribe(data => this.name=data['name']);
 
@@ -25,5 +26,7 @@ export class FormationsComponent implements OnInit {
 
 
   }
+
+
 
 }

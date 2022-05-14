@@ -1,0 +1,20 @@
+<h1 class=" text-center text-dark ">
+    Ajouter une catégorie</h1>
+<div class="card shadow">
+    <div class="card-body">
+        <form #cat="ngForm" (ngSubmit)="addcat(cat)">
+            <div class="form-group m-3">
+                <label for="name">Nom du catégorie:</label>
+                <input type="text" class="form-control" name="name" #name="ngModel" ngModel required>
+            </div>
+            <div class="alert alert-danger m-3" *ngIf="name.errors?.['required'] && name.touched">
+                Nom du catégorie est obligatoire
+            </div>
+            <div class="form-group m-3">
+                <label for="formFile" class="form-label">Image du catégorie : </label>
+                <input class="form-control" type="file" id="file " name="Image" (change)="onFileSelected($event)" #Image="ngModel" ngModel accept=".pdf,.jpg,.jpeg" required>
+            </div>
+            <button class="btn btn-primary m-3" role="submit" [disabled]="cat.invalid">Ajouter</button>
+        </form>
+    </div>
+</div>

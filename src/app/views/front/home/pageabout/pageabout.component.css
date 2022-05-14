@@ -1,0 +1,40 @@
+h1 {
+    font: 2rem 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #0073BF;
+}
+
+section {
+    max-width: 600px;
+}
+
+p {
+    text-wrap: wrap;
+    white-space: pre-wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li>i {
+    color: #0073BF;
+    transform: rotate(90deg);
+}
+
+.anis {
+    width: 300px;
+    margin: 5%;
+}
+
+.TEMOIGNAGES {
+    margin: 5%;
+    margin-top: 10%;
+    max-width: 600px;
+}
+
+h2 {
+    font: 1.5rem 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #0073BF;
+}

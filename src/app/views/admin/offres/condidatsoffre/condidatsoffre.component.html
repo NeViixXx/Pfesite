@@ -1,0 +1,61 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h2 class="m-0 font-weight-bold text-primary text-center">Tous les Offres</h2>
+    </div>
+    <div class="card-body">
+        <div class="table table-responsive">
+            <table class="table  " id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nom Offre</th>
+                        <th scope="col">Condidats</th>
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of filtreddata ; index as i">
+
+                        <th scope="row">{{i+1}}</th>
+                        <td>
+                            {{e.name}}
+                        </td>
+                        <td>
+                            {{e.Condidats.length}}
+                        </td>
+                        <td>
+                            <a type="button" class="btn btn-primary" routerLink='{{e._id}}'>
+                        Voir
+                      </a>
+                        </td>
+
+
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--
+<td>
+    <div *ngFor="let c of e.Condidats">
+        <tr rowspan="c.len"> {{c.name}}</tr>
+    </div>
+</td>
+<td>
+    <div *ngFor="let c of e.Condidats">
+        {{c.email}}
+    </div>
+</td>
+<td>
+    <div *ngFor="let c of e.Condidats">
+        {{c.tel}}
+    </div>
+</td>
+-->

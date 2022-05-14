@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PageFormationRoutingModule } from './page-formation-routing.module';
 import { PageFormationComponent } from './page-formation/page-formation.component';
 import { FormationsComponent } from './formations/formations.component';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FormationsComponent } from './formations/formations.component';
   ],
   imports: [
     CommonModule,
-    PageFormationRoutingModule
+    PageFormationRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class PageFormationModule { }

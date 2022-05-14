@@ -3,15 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { PageOffresRoutingModule } from './page-offres-routing.module';
 import { PageoffresComponent } from './pageoffres/pageoffres.component';
+import {  ReactiveFormsModule } from '@angular/forms';
+import { CondidiatureComponent } from './condidiature/condidiature.component';
+
+
 
 
 @NgModule({
   declarations: [
-    PageoffresComponent
+    PageoffresComponent,
+    CondidiatureComponent,
+
   ],
   imports: [
     CommonModule,
-    PageOffresRoutingModule
+    PageOffresRoutingModule,
+    ReactiveFormsModule
+
   ]
 })
 export class PageOffresModule { }

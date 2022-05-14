@@ -4,6 +4,15 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { UserLayoutComponent } from './user-layout/user-layout.component';
 import { FrontLayoutComponent } from './front-layout/front-layout.component';
 import { RouterModule } from '@angular/router';
+import { AuthAdminComponent } from './auth-admin/auth-admin.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthUserComponent } from './auth-user/auth-user.component';
+import { RegisterComponent } from './register/register.component';
+
+
+
+
+
 
 
 
@@ -11,11 +20,21 @@ import { RouterModule } from '@angular/router';
   declarations: [
     AdminLayoutComponent,
     UserLayoutComponent,
-    FrontLayoutComponent
+    FrontLayoutComponent,
+    AuthAdminComponent,
+    AuthUserComponent,
+    RegisterComponent,
+
+
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
+
+
+
   ]
 })
 export class LayoutsModule { }

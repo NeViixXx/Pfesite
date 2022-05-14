@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+    /* You can add global styles to this file, and also import other style files */
+
+    html,
+    body {
+        height: 100%;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: Roboto, "Helvetica Neue", sans-serif;
+    }
+
+    h1 {
+        font-weight: bolder;
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 36px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    p {
+        font-weight: lighter;
+        font-size: 16px;
+    }

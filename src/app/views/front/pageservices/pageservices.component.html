@@ -1,25 +1,20 @@
-<section class="row">
-    <div class="col-6" id="desc">
-        <div class="line"></div>
-        <h1>{{dataService.name}}</h1>
-        <p>{{dataService.Description}}</p>
-        <button class="btn btn-rounded home">Postuler</button>
-    </div>
-    <div class="col-6">
-        <img src={{dataService.Image}}>
-    </div>
-</section>
-<div class="m-5">
-    <div>
-        <h2>{{dataService.Titre1}}</h2>
-        <p>{{dataService.Text1}}</p>
-    </div>
-    <div>
-        <h2>{{dataService.Titre2}}</h2>
-        <p>{{dataService.Text2}}</p>
-    </div>
-    <div>
-        <h2>{{dataService.Titre3}}</h2>
-        <p>{{dataService.Text3}}</p>
+<div class="container-fluid">
+    <section class="row">
+        <div class="col-lg-6 mt-5 ps-5">
+            <div class="line"></div>
+            <h1>{{dataService.name}}</h1>
+            <p>{{dataService.Description}}</p>
+
+        </div>
+        <div class="col-lg-6   align-self-center">
+            <img class="img-fluid" src={{dataService.Image}}>
+        </div>
+    </section>
+    <div class="m-5">
+        <div *ngFor="let e of tab ">
+            <h2>{{e.title}}</h2>
+            <p>{{e.text}}</p>
+        </div>
+
     </div>
 </div>

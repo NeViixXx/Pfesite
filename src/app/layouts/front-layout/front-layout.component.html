@@ -1,54 +1,123 @@
-<nav class="navbar shadow-sm navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Logo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav flex-grow-1 align-self-center me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" routerLink="">Accueil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/About">A propos</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Services
-        </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li *ngFor="let e of Services "><a class="dropdown-item" href="/Services/{{e._id}}">{{e.name}}</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Formations
-        </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li *ngFor="let e of Category ">
-                            <a class="dropdown-item" href="/Category/{{e.name}}">{{e.name}}</a>
-                            <!--
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light  bg-light shadow-sm " (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
+        <div class="container-fluid">
+            <a class="navbar-brand ms-5" href="#"><img width="120" src="../../../assets/logo.png" alt=""></a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
 
-                              <ul>
-                                <li *ngFor="let e of dataArray">
-                                    <a class="dropdown-item" href="#">{{e.name}}</a>
-                                </li>
-                            </ul> -->
-
-                    </ul>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav flex-grow-1 overflow navbar-nav-scroll align-self-center me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="#home">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="#about">A propos</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" routerLink="/Offres">Condidiature</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#services" id="navbarDropdown">
+    Services
+  </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li *ngFor="let e of Services "><a class="dropdown-item" href="/Services/{{e._id}}">{{e.name}}</a></li>
+                        </ul>
                     </li>
-            </ul>
-            <div class="animation start-home"></div>
-            <button class="btn" type="submit">Se Connecter</button>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#formations" id="navbarDropdown">
+    Formations
+  </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li *ngFor="let e of Category ">
+                                <a class="dropdown-item" href="/Category/{{e.name}}" [routerLinkActive]="'active'">{{e.name}}</a>
+
+
+                        </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" routerLink="/Offres" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"> Rejoignez-nous</a>
+                        </li>
+
+
+                        <button *ngIf="!Logged" class="btn" routerLink="/login"> Se Connecter </button>
+                        <ul *ngIf="Logged" class="nav">
+                            <li class="dropdown">
+                                <a class="dropbtn d-flex" data-bs-toggle="dropdown" to="#">
+                                    <h4 class="me-2 mt-3">Bienvenue , {{userprofile.fname}}</h4>
+                                    <img class="rounded mt-3 " height="30" width="30" src="{{userprofile.avatar}}">
+                                </a>
+                                <div class="dropdown-content">
+                                    <a to="/">
+                              My profile
+                            </a>
+                                    <a to="#">
+                              Settings
+                            </a>
+                                    <a href="/" (click)="logout()">
+                              Exit
+                            </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                </ul>
+
+
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</header>
+
+
 
 <router-outlet>
 </router-outlet>
+
+
+
+
+<footer class="footer">
+    <div class="l-footer">
+        <h1>
+            <img src="../../../assets/logo.png" alt=""></h1>
+        <p>-Soutien dans les projets stratégiques de votre système d'information.</p>
+        <p>-Analysez votre système en profondeur.</p>
+        <p> -Conformité aux bonnes pratiques de sécurité.</p>
+        <p> -Construire un système de gestion, Contrôler les risques.</p>
+    </div>
+    <ul class="r-footer">
+        <li>
+            <h2>
+                Liens</h2>
+            <ul class="box">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#about">A propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#formations">Formations</a></li>
+                <li><a routerLink="/Offres">Condidature</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+
+            </ul>
+            <li class="features">
+                <h2>
+                    Services</h2>
+                <ul class="box h-box">
+                    <li *ngFor="let e of Services "><a href="/Services/{{e._id}}">{{e.name}}</a></li>
+
+
+                </ul>
+            </li>
+            <li>
+                <h2>
+                    Formations</h2>
+                <ul class="box">
+                    <li *ngFor="let e of Category "><a href="/Category/{{e.name}}">{{e.name}}</a></li>
+
+                </ul>
+            </li>
+
+    </ul>
+</footer>

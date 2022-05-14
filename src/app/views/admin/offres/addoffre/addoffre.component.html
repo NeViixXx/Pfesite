@@ -1,0 +1,93 @@
+<div class="conaitner-fluid m-5">
+    <h1 class="text-center">Ajouter une Offre</h1>
+    <div class="card shadow">
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="Addoffre(f)">
+                <!-- firstName validation start here -->
+                <div class="form-group m-2">
+                    <label for="exampleFormControlInput1">Type</label>
+                    <select class="form-control mt-2 mb-2" name="Type" #Type="ngModel" required ngModel>
+              <option value="">Choisir un type</option>
+        <option value="Stage" >Offre de Stage</option>
+        <option value="Emploi" >Offre d'emploi</option>
+      </select>
+                </div>
+                <!--
+  <div class="alert alert-danger" *ngIf="firstname.errors?.required && firstname.touched">
+      FirstName is required
+  </div>
+  <div class="alert alert-danger" *ngIf="firstname.errors?.minlength && firstname.touched">
+      FirstName must be minimum 2 caractere
+  </div>
+  -->
+                <!-- lastName validation end here -->
+
+                <!-- lastName validation start here -->
+                <div class="form-group m-2">
+                    <label for="exampleFormControlInput1">Nom du l'Offre</label>
+                    <input type="text" class="form-control mt-2 mb-2" placeholder="Nom du l'Offre" required name="name" #name="ngModel" minlength="2" maxlength="20" ngModel>
+                </div>
+                <!--
+  <div class="alert alert-danger" *ngIf="lastname.errors?.required && lastname.touched">
+      lastname is required
+  </div>
+  <div class="alert alert-danger" *ngIf="lastname.errors?.minlength && lastname.touched">
+      lastname must be minimum 2 caractere
+  </div>
+  -->
+                <!-- lastName validation end here -->
+
+                <!-- Email validation start here -->
+
+                <div class="form-group m-2">
+                    <label for="exampleFormControlInput1">Niveau</label>
+                    <input type="text" class="form-control mt-2 mb-2" placeholder="Niveau d'études " required name="Niveau" #Niveau="ngModel" ngModel>
+                </div>
+                <!--
+  <div class="alert alert-danger" *ngIf="email.errors?.required && email.touched">
+      email is required
+  </div>
+
+  <div class="alert alert-danger" *ngIf="email.errors?.email && email.touched">
+      the input must be email not string
+  </div>
+  -->
+                <!-- Email validation end here -->
+
+                <!-- age validation start here -->
+                <div class="form-group m-2">
+                    <label for="exampleFormControlInput1">Postes</label>
+                    <input type="number" class="form-control mt-2 mb-2" placeholder="Postes" required name="Postes" #Postes="ngModel" ngModel>
+                </div>
+                <!--
+  <div class="alert alert-danger" *ngIf="age.errors?.required && age.touched">
+      age is required
+  </div>
+  -->
+                <!-- age validation end here -->
+
+
+                <!-- Phone validation start here -->
+
+                <div class="form-group m-2">
+                    <label for="exampleFormControlInput1"> Description</label>
+                    <textarea type="number" class="form-control mt-2 mb-2" placeholder=" Description du l'offre" required name="Description" #Description="ngModel" ngModel></textarea>
+                </div>
+                <!--
+  <div class="alert alert-danger" *ngIf="phone.errors?.required && phone.touched">
+      phone is required
+  </div>
+  -->
+                <!-- Phone validation end here
+  <div class="alert alert-success" *ngIf="messageSuccess">
+      {{messageSuccess}}
+  </div>
+
+  -->
+
+
+                <button class="btn btn-primary m-3" style="float: right;" [disabled]="f.invalid">Ajouter</button>
+            </form>
+        </div>
+    </div>
+</div>

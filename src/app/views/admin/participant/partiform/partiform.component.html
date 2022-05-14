@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="card shadow">
+        <div class="card-header text-center">
+            <h2 class="text-primary"> Tous les Formations </h2>
+        </div>
+        <div class="card-body">
+            <div class="table table-responsive">
+                <table class="table  " id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Nom du societé</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Adresse</th>
+                            <th scope="col">Téléphone</th>
+                            <th scope="col">Commentaire</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let e of dataform.Participants ; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{e.name}}</td>
+                            <td>{{e.namesoc}}</td>
+                            <td>{{e.email}}</td>
+                            <td>{{e.adresse}}</td>
+                            <td>{{e.tel}}</td>
+                            <td>
+                                <p>{{e.commetaire}}</p>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

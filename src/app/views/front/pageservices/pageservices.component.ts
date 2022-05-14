@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { HttpService } from 'src/app/services/http.service';
+
 
 
 @Component({
@@ -9,21 +10,36 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./pageservices.component.css']
 })
 export class PageservicesComponent implements OnInit {
+
 id:any
 dataService:any
-Image:any;
+tab:any
 
 
   constructor(private http:HttpService , private aroute:ActivatedRoute) {
     this.aroute.params.subscribe(data => this.id=data['id']);
+    this.http.getservice(this.id).subscribe(data => {
+      this.dataService=data;
+      this.tab=this.dataService.Caracteristique
+      console.log(this.tab);
+
+
+
+
+       });
 
 
   }
+
+
 
   ngOnInit(): void {
-    this.http.getservice(this.id).subscribe(data => this.dataService=data);
-Image=this.dataService.Image
+
 
   }
 
-}
+
+
+
+  }
+

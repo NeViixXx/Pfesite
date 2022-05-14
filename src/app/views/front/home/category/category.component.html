@@ -1,14 +1,21 @@
-<h1>Nos Formations</h1>
-<div class="container">
-    <div class="col-3">
-        <div class="hexagon" *ngFor="let e of Category">
-            <div class="hexagon-shape">
-                <img src="images/testi3.jpg" alt="">
-                <div class="content">
+<div id="formations">
+    <main class="divbg">
+        <!--  <img class="img col-12 bg" src="../../../../../assets/Soustraction.png"> -->
+        <section class="mt-5 align-items-center justify-content-center">
+            <h1 class="mt-5">Nos Formations</h1>
+            <div class="container justify-content-center">
+                <div class="col-lg-4 hexagon  align-items-center justify-content-center" *ngFor="let e of Category">
+                    <a routerLink="/Category/{{e.name}}">
+                        <div class="hexagon-shape">
+                            <img src={{e.Image}} class="d-block w-100" alt="...">
+                            <div class="content">
+                                <h2>{{e.name}}</h2>
 
-                    <h2>{{e.name}}</h2>
-
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+</div>

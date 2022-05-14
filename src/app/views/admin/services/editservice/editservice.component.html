@@ -1,0 +1,37 @@
+<h1 class="text-center text-dark">Modifier</h1>
+<div class="card shadow">
+    <div class="card-body">
+        <form [formGroup]="editservice" (ngSubmit)="edit()">
+            <div class="form-group m-3">
+                <label for="name">Nom du service:</label>
+                <input type="text" class="form-control" formControlName="name" required>
+            </div>
+
+            <div class="form-group m-3">
+                <label for="name">Description:</label>
+                <textarea type="text" class="form-control" formControlName="Description" required></textarea>
+            </div>
+            <div class="form-group m-3">
+                <label for="formFile" class="form-label">Image du service : </label>
+                <input class="form-control" type="file" id="file " name="Image" (change)="onFileSelected($event)" formControlName="Image" accept=".pdf,.jpg,.jpeg">
+            </div>
+            <div formArrayName="Caracteristique">
+                <div *ngFor="let item of editservice.controls.Caracteristique['controls']; index as i" [formGroupName]="i">
+                    <div>
+                        <div class="form-group m-3">
+                            <label for="Titre">Titre : </label>
+                            <input type="text" class="form-control" formControlName="title">
+                        </div>
+                        <div class="form-group m-3">
+                            <label for="name">Contenu</label>
+                            <textarea type="text" class="form-control" formControlName="text"></textarea>
+                        </div>
+                        <button class="btn btn-danger m-3" style="float: right;" (click)="delete(i)">Supprimer</button>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-success m-3" (click)="Addnew()">Ajouter une autre paragraphe</button>
+            <button class="btn btn-primary m-3" type="submit" [disabled]="editservice.invalid">Modifier</button>
+        </form>
+    </div>
+</div>

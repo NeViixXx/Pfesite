@@ -1,5 +1,77 @@
-<p>contact works!</p>
-<div>
-    <h1></h1>
-    <h2> </h2>
-</div>
+<section id="contact">
+    <div class="container">
+        <div class="content">
+            <div class="left-side">
+                <div class="address details">
+                    <i class="bi bi-geo-alt-fill"></i>
+                    <div class="topic">Addresse</div>
+                    <div class="text-one">Jardin el menzah 2</div>
+
+                </div>
+                <div class="phone details">
+                    <i class="bi bi-telephone-fill"></i>
+                    <div class="topic">Téléphone</div>
+                    <div class="text-one">+216 70 734 580</div>
+                    <div class="text-two">+216 95 805 633</div>
+                </div>
+                <div class="email details">
+                    <i class="bi bi-envelope-fill"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">contact@intelligentsecurityit.com</div>
+
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="topic-text text-center">Contactez Nous</div>
+
+                <form [formGroup]="contactform" (ngSubmit)="add()">
+                    <div class="input-box">
+                        <input type="email" name="email" placeholder="Email" formControlName="email" required>
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="email.touched && email.hasError('required')">
+                        Entrez Votre Email
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf=" email.hasError('email')">
+                        Email invalide
+                    </div>
+                    <div class="input-box">
+                        <input type="text" placeholder="Sujet" formControlName="sujet" required>
+                    </div>
+                    <div class=" alert alert-danger " role="alert " *ngIf="sujet.touched && sujet.hasError('required')">
+                        Entrez un sujet
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="sujet.touched && sujet.hasError('minlength')">
+                        Sujet invalide
+                    </div>
+                    <div class="input-box message-box ">
+                        <textarea placeholder="Enter your message " formControlName="message" required></textarea>
+                    </div>
+                    <div class=" alert alert-danger " role="alert " *ngIf="message.touched && message.hasError('required')">
+                        Entrez un message
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="message.touched && message.hasError('minlength')">
+                        Message trés court
+                    </div>
+                    <button class="btn" type="submit" [disabled]="contactform.invalid">Envoyer</button>
+                </form>
+
+                <main class="done " *ngIf="verif==1 ">
+                    <div class="swal2-icon swal2-success swal2-animate-success-icon " style="display: flex; ">
+                        <div class="swal2-success-circular-line-left " style="background-color: rgb(255, 255, 255); "></div>
+                        <span class="swal2-success-line-tip "></span>
+                        <span class="swal2-success-line-long "></span>
+                        <div class="swal2-success-ring "></div>
+                        <div class="swal2-success-fix " style="background-color: rgb(255, 255, 255); "></div>
+                        <div class="swal2-success-circular-line-right " style="background-color: rgb(255, 255, 255); "></div>
+                    </div>
+                    <p class="text-center ">Message envoyée</p>
+                </main>
+                <main class="done " *ngIf="verif==2 ">
+                    <div class="swal2-icon swal2-error swal2-animate-error-icon " style="display: flex; "><span class="swal2-x-mark "><span class="swal2-x-mark-line-left "></span><span class="swal2-x-mark-line-right "></span></span>
+                    </div>
+                    <p class="text-center ">Échec</p>
+                </main>
+            </div>
+        </div>
+    </div>
+</section>

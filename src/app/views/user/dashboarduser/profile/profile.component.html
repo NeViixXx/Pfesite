@@ -1,0 +1,30 @@
+<div class="card shadow">
+    <form #profile="ngForm" class="d-flex flex-wrap" (ngSubmit)="Modif(profile)">
+        <div class="card-body col-lg-4">
+
+            <img class="rounded img-fluid shadow col-lg-12 col-sm-12 col-md-12" width="250" height="250" src="{{img}}">
+            <input class="form-control mt-3" type="file" id="file" name="avatar" (change)="onFileSelected($event)" #avatar="ngModel" [ngModel] accept=".jpg,.jpeg,.png">
+        </div>
+        <div class="card-body mt-2 col-lg-8">
+            <h2>Votre Infomration Personnel</h2>
+            <div class=" form-group d-flex flex-wrap ">
+
+                <input type="text" class="form-control form-control-user " name="fname" placeholder="Prénom" #fname="ngModel" [ngModel] value="{{userprofile?.fname}}" required>
+                <input type="text" class="form-control form-control-user " name="lname" placeholder="Nom" #lname="ngModel" value="{{userprofile?.lname}}" [ngModel] required>
+            </div>
+            <div class=" form-group d-flex flex-wrap">
+                <input type="email" class="form-control form-control-user " name="email" placeholder="Email" #email="ngModel" value="{{userprofile?.email}}" [ngModel] required>
+                <input type="text" class="form-control form-control-user " name="phonenum" placeholder="Numéro" #phonenum="ngModel" value="{{userprofile?.phonenum}}" [ngModel] required>
+            </div>
+            <div class=" form-group d-flex flex-wrap">
+                <input type="password" class="form-control form-control-user " name="password" placeholder="Mot de passe" #password="ngModel" [ngModel] required>
+                <input type="password" class="form-control form-control-user " name="passwordconf" placeholder="Confirmer mot de passe" #confpass="ngModel" [ngModel] required>
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control date" name="birthdate" #birthdate="ngModel" value="{{userprofile?.birthdate | date:'yyyy-MM-dd'}}" [ngModel] required>
+            </div>
+
+            <button class="btn btn-primary float-end" type="submit">Modifier </button>
+        </div>
+    </form>
+</div>

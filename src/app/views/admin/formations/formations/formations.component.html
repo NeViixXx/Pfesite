@@ -1,0 +1,32 @@
+<h1 class=" text-center m-4">
+    {{name}}</h1>
+<div class="card shadow mb-4">
+
+    <div *ngIf="cat.length===0">
+        <h2 class="pas-formation text-center">pas de formations dans cette catégorie </h2>
+    </div>
+
+    <div class="card-body">
+        <a style="float: right;" routerLink="AjoutFormation">
+            <i class="bi bi-plus-square-fill mt-3"></i>
+        </a>
+        <div class="container-fluid d-flex flex-wrap justify-content-center">
+            <div class="card mt-5 m-2" *ngFor="let e of cat ; index as i" style="width: 18rem;">
+
+                <img src="{{e.Image}}" height="200" width="200" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h2 class="card-title text-center">{{e.name}}</h2>
+                    <div class="container d-flex ">
+
+                        <button class="btn btn-sm btn-success  p-2 pb-3 col-md-6 " routerLink="edit/{{e._id}}">Modifier</button>
+
+
+                        <button class="btn btn-sm btn-danger  p-2 pb-3 col-md-6 " (click)="delete(e._id,i)">Supprimer</button>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

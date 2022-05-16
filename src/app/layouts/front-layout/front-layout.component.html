@@ -9,13 +9,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav flex-grow-1 overflow navbar-nav-scroll align-self-center me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="#home">Accueil</a>
+                        <a class="nav-link " aria-current="page" (click)="toHome()" href="#home" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">A propos</a>
+                        <a class="nav-link" (click)="toAbout()" href="#about" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">A propos</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#services" id="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" (click)="toServices()" href="#service" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}" id="navbarDropdown">
     Services
   </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -23,7 +23,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#formations" id="navbarDropdown">
+                        <a class="nav-link dropdown-toggle" (click)="toFormations()" href="#formations" id="navbarDropdown" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">
     Formations
   </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -34,10 +34,10 @@
                         </ul>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" (click)="toContact()" href="#contact" [routerLinkActive]="'active'">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" routerLink="/Offres" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}"> Rejoignez-nous</a>
+                            <a class="nav-link" aria-current="page" routerLink="/Offres" [routerLinkActive]="'active'"> Rejoignez-nous</a>
                         </li>
 
 
@@ -45,8 +45,8 @@
                         <ul *ngIf="Logged" class="nav">
                             <li class="dropdown">
                                 <a class="dropbtn d-flex" data-bs-toggle="dropdown" to="#">
-                                    <h4 class="me-2 mt-3">Bienvenue , {{userprofile.fname}}</h4>
-                                    <img class="rounded mt-3 " height="30" width="30" src="{{userprofile.avatar}}">
+                                    <h4 class="me-2 mt-3">Bienvenue , {{userprofile?.fname}}</h4>
+                                    <img class="rounded mt-3 " height="30" width="30" src="{{userprofile?.avatar}}">
                                 </a>
                                 <div class="dropdown-content">
                                     <a to="/">

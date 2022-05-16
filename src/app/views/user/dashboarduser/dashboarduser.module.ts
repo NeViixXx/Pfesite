@@ -8,6 +8,7 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { FormsModule } from '@angular/forms';
 import { OffresComponent } from './offres/offres.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { OffresuserComponent } from './offresuser/offresuser.component';
 
 
 
@@ -19,6 +20,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     DashboarduserComponent,
     ProfileComponent,
     OffresComponent,
+    OffresuserComponent,
 
 
   ],

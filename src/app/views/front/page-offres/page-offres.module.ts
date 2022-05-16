@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { PageOffresRoutingModule } from './page-offres-routing.module';
 import { PageoffresComponent } from './pageoffres/pageoffres.component';
 import {  ReactiveFormsModule } from '@angular/forms';
@@ -13,6 +12,7 @@ import { CondidiatureComponent } from './condidiature/condidiature.component';
   declarations: [
     PageoffresComponent,
     CondidiatureComponent,
+
 
   ],
   imports: [

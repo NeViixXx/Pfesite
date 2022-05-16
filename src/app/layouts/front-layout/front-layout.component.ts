@@ -1,7 +1,7 @@
 
-import { Component, OnInit,HostListener, HostBinding , Directive, Inject } from '@angular/core';
+import { Component, OnInit,HostListener, HostBinding , Directive, Inject, Renderer2 } from '@angular/core';
 
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
 import { AuthuserService } from 'src/app/services/authuser.service';
 
 import { HttpService } from 'src/app/services/http.service';
@@ -37,7 +37,7 @@ userprofile:any
   }
 
 
-  constructor(private http : HttpService , private route:Router , private userdata:AuthuserService  ) {
+  constructor(private http : HttpService , private route:Router , private userdata:AuthuserService , private router:Router ) {
     this.http.getallcategory().subscribe(data => this.Category=data);
 
 this.Logged=this.userdata.LoggedIn()
@@ -58,7 +58,27 @@ this.Logged=this.userdata.LoggedIn()
     location.reload();
       }
 
+toHome(){
+ document.getElementById("home")?.scrollIntoView({behavior:"smooth"})
 
+}
+
+toAbout(){
+  document.getElementById("about")?.scrollIntoView({behavior:"smooth"})
+
+}
+
+toServices(){
+  document.getElementById("services")?.scrollIntoView({behavior:"smooth"})
+}
+
+toFormations(){
+  document.getElementById("formations")?.scrollIntoView({behavior:"smooth"})
+}
+
+toContact(){
+  document.getElementById("contact")?.scrollIntoView({behavior:"smooth"})
+}
 
   ngOnInit(): void {
 

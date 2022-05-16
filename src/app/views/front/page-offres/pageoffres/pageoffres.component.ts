@@ -20,8 +20,6 @@ Offres : any
 
   constructor(private http:HttpService) {
     this.http.getalloffres().subscribe(data => this.Offres=data);
-
-
   }
 
   ngOnInit(): void {

@@ -3,7 +3,9 @@
         <div class="card-body col-lg-4">
 
             <img class="rounded img-fluid shadow col-lg-12 col-sm-12 col-md-12" width="250" height="250" src="{{img}}">
+
             <input class="form-control mt-3" type="file" id="file" name="avatar" (change)="onFileSelected($event)" #avatar="ngModel" [ngModel] accept=".jpg,.jpeg,.png">
+
         </div>
         <div class="card-body mt-2 col-lg-8">
             <h2>Votre Infomration Personnel</h2>

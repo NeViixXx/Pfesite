@@ -20,7 +20,6 @@ console.log(this.user._id)
     this.userdata.getprofile().subscribe(data => {
       this.userprofile=data
       this.img=this.userprofile.avatar
-      console.log(this.userprofile)
     })
 
    }

@@ -1,6 +1,6 @@
 <div class="container mt-5 mb-5">
     <h1 class="text-center mt-5">Nos Offres</h1>
-    <div class="alert alert-danger" *ngIf="Offres.length===0">
+    <div class="alert alert-danger" *ngIf="Offres?.length===0">
         <h2 class="text-center">Aucune offre pour le moment</h2>
     </div>
     <div class="row" *ngFor="let e of Offres">

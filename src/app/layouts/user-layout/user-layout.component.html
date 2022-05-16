@@ -18,7 +18,7 @@
                             <a routerLink="offres">Tous les offres</a>
                         </li>
                         <li>
-                            <a href="#">Vos offres</a>
+                            <a routerLink="offres/user">Vos offres</a>
                         </li>
 
                     </ul>
@@ -86,8 +86,8 @@
                                 <ul class="nav">
                                     <li class="dropdown">
                                         <a class="dropbtn d-flex" data-bs-toggle="dropdown" to="#">
-                                            <h4 class="me-2 mt-3">Bienvenue , {{userprofile.fname}}</h4>
-                                            <img class="rounded mt-3 " height="30" width="30" src={{userprofile.avatar}} />
+                                            <h4 class="me-2 mt-3">Bienvenue , {{userprofile?.fname}}</h4>
+                                            <img class="rounded mt-3 " height="30" width="30" src={{userprofile?.avatar}} />
                                         </a>
                                         <div class="dropdown-content">
                                             <a routerLink="/user">

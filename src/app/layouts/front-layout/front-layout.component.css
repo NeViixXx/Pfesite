@@ -79,6 +79,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     transition: .5s;
+    cursor: pointer;
     z-index: 1000;
 }
 

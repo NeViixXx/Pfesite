@@ -55,6 +55,10 @@ updateprofile(data:any){
   return this.http.put("http://localhost:1000/user/profile",data,{headers:this.headerUser})
 }
 
+offres(data:any){
+  return this.http.get("http://localhost:1000/offres/Mesoffres",{headers:this.headerUser})
+}
+
   LoggedIn(){
     let token:any=localStorage.getItem('usertoken')
     if(!token) {

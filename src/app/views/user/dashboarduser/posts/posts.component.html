@@ -4,10 +4,10 @@
         <div class="photo" style="background-image: url({{e.Images[0]}})"></div>
     </div>
     <div class="description">
-        <h1>{{e.name}}</h1>
+        <h3>{{e.name}}</h3>
         <p> {{e.Description}}</p>
         <p class="read-more">
-            <a data-bs-toggle="modal" (click)="getdata(e.name,e.Images,e.Description,e._id)" data-bs-target="#staticBackdrop">Voir plus</a>
+            <a data-bs-toggle="modal" (click)="getdata(e.name,e.Images,e.Description,e._id)" data-bs-target="#staticBackdrop">Voir plus </a>
         </p>
     </div>
 </div>
@@ -22,7 +22,7 @@
             <div class="modal-body">
                 <div class="d-flex flex-wrap ms-3">
                     <div>
-                        <img src="{{dataPost.Images[0]}}" class="row rounded" height="400" width="400">
+                        <img src="{{dataPost.Images[0]}}" class="row rounded" height="300" width="300">
                         <div class="m-2" *ngFor="let e of dataPost.Images ; index as i">
                             <img src="{{e}}" class="rounded" height="100" width="100">
                         </div>

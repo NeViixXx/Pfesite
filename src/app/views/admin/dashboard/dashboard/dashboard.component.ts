@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
+import { Subscription } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -12,9 +13,13 @@ formations:any
 filtreddata:any
 nbform=0
 nboffre=0
+
 offres:any
 canvas: any;
   ctx: any;
+
+
+  private offre: Subscription = new Subscription;
   @ViewChild('mychart') mychart:any;
 
 
@@ -31,14 +36,18 @@ canvas: any;
           this.nbform=this.nbform+x.Participants.length
         })
       });
-      this.http.getalloffres().subscribe(data => {this.offres=data
+   this.offre= this.http.getalloffres().subscribe(data => {this.offres=data
         this.filtreddata = this.offres.filter((val:any) => val.Condidats.length >0 )
 
         this.filtreddata.map((x:any) => {
 
-          this.nboffre=this.nboffre+x.Condidats.length
+        this.nboffre=this.nboffre+x.Condidats.length
+
         })
       });
+
+
+
 
 
     };
@@ -52,21 +61,44 @@ canvas: any;
   ngAfterViewInit() {
     this.canvas = this.mychart.nativeElement;
     this.ctx = this.canvas.getContext('2d');
+    this.offre= this.http.getalloffres().subscribe(data => {this.offres=data
+      this.filtreddata = this.offres.filter((val:any) => val.Condidats.length >0 )
+
+      this.filtreddata.map((x:any) => {
+
+      this.nboffre=this.nboffre+x.Condidats.length
+      this.http.getallformations().subscribe(data => {this.formations=data
+        this.filtreddata = this.formations.filter((val:any) => val.Participants.length >0 )
+
+        this.filtreddata.map((x:any) => {
+
+          this.nbform=this.nbform+x.Participants.length
+
+
 
     new Chart(this.ctx, {
       type: 'doughnut',
       data: {
           datasets: [{
-            data: [300, 50, 100,1111],
+            data: [this.nboffre,this.nbform,this.offres.length,this.formations.length],
             backgroundColor: [
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 205, 86)',],
+              '#0d6efd',
+              '#198754',
+              '#0dcaf0',
+              '#ffc107'],
 
           }],
 
-          labels: ['Offres', 'Participations', 'Formations', 'April 2019']
+          labels: ['Condidats', 'Participants', 'Offres', 'Formations']
       },
   });
+
+})
+});
+})
+});
+
   }
+
+
 }

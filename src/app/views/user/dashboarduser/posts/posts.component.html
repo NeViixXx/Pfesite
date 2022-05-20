@@ -22,10 +22,28 @@
             <div class="modal-body">
                 <div class="d-flex flex-wrap ms-3">
                     <div>
-                        <img src="{{dataPost.Images[0]}}" class="row rounded" height="300" width="300">
+                        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="{{dataPost.Images[0]}}" class="d-block" height="300" width="300" alt="...">
+                                </div>
+                                <div class="carousel-item" *ngFor="let e of dataPost.Images ; index as i">
+                                    <img src="{{dataPost.Images[i+1]}}" class="d-block " height="300" width="300" alt="...">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                        </div>
+                        <!-- <img src="{{dataPost.Images[0]}}" class="row rounded" height="300" width="300">
                         <div class="m-2" *ngFor="let e of dataPost.Images ; index as i">
                             <img src="{{e}}" class="rounded" height="100" width="100">
-                        </div>
+                        </div> -->
                     </div>
                     <div class="m-3 ms-5">
                         <h1>{{dataPost.name}}</h1>

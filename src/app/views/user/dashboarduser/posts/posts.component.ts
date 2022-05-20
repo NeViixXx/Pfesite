@@ -15,6 +15,9 @@ export class PostsComponent implements OnInit {
     id:''
     }
 
+
+
+
   constructor(private http:HttpService) {
     this.http.getpost().subscribe(data => {this.posts=data
 
@@ -27,6 +30,7 @@ export class PostsComponent implements OnInit {
     this.dataPost.Images=Images
     this.dataPost.Description=Description
     this.dataPost.id=id
+console.log(this.dataPost.Images)
       }
 
   ngOnInit(): void {

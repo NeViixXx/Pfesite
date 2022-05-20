@@ -30,13 +30,15 @@ import { PostsComponent } from './posts/posts.component';
 
 
 
+
   ],
   imports: [
     CommonModule,
     DashboarduserRoutingModule,
     NzLayoutModule,
     FormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+
   ]
 })
 export class DashboarduserModule { }

@@ -36,7 +36,8 @@ const routes: Routes = [
     .then(m=>m.OffresModule)},
     {path:'Participant',loadChildren:()=>import('./views/admin/participant/participant.module')
     .then(m=>m.ParticipantModule)},
-
+    {path:'Posts',loadChildren:()=>import('./views/admin/posts/posts.module')
+    .then(m=>m.PostsModule)},
 
 
 

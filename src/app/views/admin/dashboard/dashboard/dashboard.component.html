@@ -1,6 +1,6 @@
 <!-- Page Heading -->
 
-<h1 class="text-dark text-center">Welcome Admin</h1>
+<h1 class="text-dark text-center">Bienvenu Admin</h1>
 
 
 
@@ -54,7 +54,7 @@
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{offres.length}}</div>
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{offres?.length}}</div>
                             </div>
 
                         </div>
@@ -75,7 +75,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             Formations</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{formations.length}}</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{formations?.length}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-book fa-2x text-gray-300"></i>
@@ -85,13 +85,17 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
+<div class="container-fluid mt-4">
+    <h3>Statistiques</h3>
+    <div class="d-flex justify-content-around">
+        <div class="col-lg-6 col-sm-12 card shadow m-2" style="width:40%;">
+            <canvas id="myChart" width="600" height="250" #mychart></canvas>
+        </div>
+        <div class="col-lg-6 card col-sm-12 shadow m-2" style="width:40%;">
+            <canvas id="myChart" width="600" height="250" #mychart></canvas>
+        </div>
+    </div>
+</div>
 
 
 <!-- End of Main Content -->

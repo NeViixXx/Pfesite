@@ -28,7 +28,6 @@ export class AuthUserComponent implements OnInit {
 
   loginuser(user:any) {
     let data = user.value
-console.log(data)
 this.auth.login(data).subscribe(response =>
   {this.datarecive=response
     this.auth.Savedata(this.datarecive)

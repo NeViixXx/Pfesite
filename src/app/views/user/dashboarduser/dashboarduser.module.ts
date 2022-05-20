@@ -9,6 +9,10 @@ import { FormsModule } from '@angular/forms';
 import { OffresComponent } from './offres/offres.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { OffresuserComponent } from './offresuser/offresuser.component';
+import { ParticipationsComponent } from './participations/participations.component';
+import { PostsComponent } from './posts/posts.component';
+
+
 
 
 
@@ -21,6 +25,9 @@ import { OffresuserComponent } from './offresuser/offresuser.component';
     ProfileComponent,
     OffresComponent,
     OffresuserComponent,
+    ParticipationsComponent,
+    PostsComponent,
+
 
 
   ],

@@ -1,0 +1,17 @@
+i {
+    font-size: 24px;
+    z-index: 4;
+    color: red;
+    background-color: white;
+    background-size: 10px 10px;
+    background-position: center;
+    position: relative;
+}
+
+div.images {
+    width: 150px;
+}
+
+img {
+    z-index: 1;
+}

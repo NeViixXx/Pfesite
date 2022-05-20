@@ -10,11 +10,12 @@ import { AuthuserService } from 'src/app/services/authuser.service';
 export class OffresuserComponent implements OnInit {
 Offres:any
 emailuser:any
+offreuser:any
   constructor(private user:AuthuserService) {
     this.user.getprofile().subscribe(data => {
       this.emailuser=data
-
-      this.user.offres(this.emailuser.email).subscribe(data => console.log(data));
+      this.user.offres(this.emailuser).subscribe(data => {
+      this.offreuser=data});
     })
 
 

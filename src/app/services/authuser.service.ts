@@ -56,7 +56,11 @@ updateprofile(data:any){
 }
 
 offres(data:any){
-  return this.http.get("http://localhost:1000/offres/Mesoffres",{headers:this.headerUser})
+  return this.http.post("http://localhost:1000/Offre/Mesoffres",data,{headers:this.headerUser})
+}
+
+participer(data:any){
+  return this.http.post("http://localhost:1000/formation/Participations",data,{headers:this.headerUser})
 }
 
   LoggedIn(){

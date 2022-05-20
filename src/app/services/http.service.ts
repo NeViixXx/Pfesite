@@ -119,6 +119,26 @@ deleteformation(id:any)
 
 }
 
+getpost(){
+  return this.http.get("http://localhost:1000/posts/")
+}
+
+addpost(data:any){
+  return this.http.post("http://localhost:1000/posts/",data,{headers:this.headerAdmin})
+}
+
+deletepost(id:any)
+{
+  return this.http.delete(`http://localhost:1000/posts/`+id,{headers:this.headerAdmin})
+
+}
+
+updatepost(data:any,id:any)
+{
+  return this.http.put(`http://localhost:1000/posts/`+id,data,{headers:this.headerAdmin})
+
+}
+
 
 condidature(profil:any,id:any){
   return this.http.post(`http://localhost:1000/Offre/${id}/postuler`,profil)

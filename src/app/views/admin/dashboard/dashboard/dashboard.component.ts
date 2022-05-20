@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Chart } from 'chart.js';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -12,6 +13,13 @@ filtreddata:any
 nbform=0
 nboffre=0
 offres:any
+canvas: any;
+  ctx: any;
+  @ViewChild('mychart') mychart:any;
+
+
+
+
 
   constructor(private http:HttpService) {
 
@@ -38,6 +46,27 @@ offres:any
 
 
   ngOnInit(): void {
+
   }
 
+  ngAfterViewInit() {
+    this.canvas = this.mychart.nativeElement;
+    this.ctx = this.canvas.getContext('2d');
+
+    new Chart(this.ctx, {
+      type: 'doughnut',
+      data: {
+          datasets: [{
+            data: [300, 50, 100,1111],
+            backgroundColor: [
+              'rgb(255, 99, 132)',
+              'rgb(54, 162, 235)',
+              'rgb(255, 205, 86)',],
+
+          }],
+
+          labels: ['Offres', 'Participations', 'Formations', 'April 2019']
+      },
+  });
+  }
 }

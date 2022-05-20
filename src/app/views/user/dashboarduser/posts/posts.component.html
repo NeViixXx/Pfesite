@@ -1,0 +1,39 @@
+<h1 class="text-center"> Tous les postes</h1>
+<div class="blog-card" *ngFor="let e of posts ;index as i">
+    <div class="meta">
+        <div class="photo" style="background-image: url({{e.Images[0]}})"></div>
+    </div>
+    <div class="description">
+        <h1>{{e.name}}</h1>
+        <p> {{e.Description}}</p>
+        <p class="read-more">
+            <a data-bs-toggle="modal" (click)="getdata(e.name,e.Images,e.Description,e._id)" data-bs-target="#staticBackdrop">Voir plus</a>
+        </p>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex flex-wrap ms-3">
+                    <div>
+                        <img src="{{dataPost.Images[0]}}" class="row rounded" height="400" width="400">
+                        <div class="m-2" *ngFor="let e of dataPost.Images ; index as i">
+                            <img src="{{e}}" class="rounded" height="100" width="100">
+                        </div>
+                    </div>
+                    <div class="m-3 ms-5">
+                        <h1>{{dataPost.name}}</h1>
+                        <p>{{dataPost.Description}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

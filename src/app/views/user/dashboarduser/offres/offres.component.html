@@ -4,7 +4,7 @@
         <div class="alert alert-danger" *ngIf="Offres.length===0">
             <h2 class="text-center">Aucune offre pour le moment</h2>
         </div>
-        <div class="row" *ngFor="let e of Offres">
+        <div class="row" *ngFor="let e of Offres | paginate: { itemsPerPage: 5, currentPage: p }">
             <a href="Offres/{{e._id}}">
                 <div id="card" class="card shadow">
                     <div class="go-corner" href="#">
@@ -22,6 +22,5 @@
             </a>
         </div>
     </div>
-    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page">
-    </mat-paginator>
+    <ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="Offres.length"></ngb-pagination>
 </div>

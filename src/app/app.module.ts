@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeModule } from './views/front/home/home.module';
 import { LoaderInterceptor } from './views/front/home/loader/interceptors/loader-interceptor.service';
 import { ShowmoreComponent } from './showmore/showmore.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -46,6 +48,8 @@ CommonModule,
     FormsModule,
     HomeModule,
 ReactiveFormsModule,
+NgxPaginationModule,
+NgbModule,
 
 
 

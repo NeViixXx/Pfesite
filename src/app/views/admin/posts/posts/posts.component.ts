@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { AuthuserService } from 'src/app/services/authuser.service';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+  p:number=1
 posts:any
 dataPost={
   name:'',
@@ -15,20 +17,34 @@ dataPost={
   Images:[],
   id:''
   }
-
+  Comments: any[] =[]
+  userprofile:any
+singlepost:any
+imageUrl: string = '';
   selectedFiles?: FileList;
   Images: string[] = [];
-  constructor(private http:HttpService) {
-    this.http.getpost().subscribe(data => {this.posts=data
+  constructor(private http:HttpService , private userdata:AuthuserService) {
+      this.http.getpost().subscribe(data => {this.posts=data
+      })
+      this.userdata.getprofile().subscribe(data => {
+        this.userprofile=data
       })
 
   }
+
+  changeImage(e:any){
+    this.imageUrl=e.src
+    }
 
   getdata(name:string,Images:any,Description:string,id:any){
     this.dataPost.name=name
     this.dataPost.Images=Images
     this.dataPost.Description=Description
     this.dataPost.id=id
+    this.http.getsinglepost(this.dataPost.id).subscribe(data => {this.singlepost=data
+      this.Comments=this.singlepost.Comments
+
+    })
       }
 
 
@@ -51,13 +67,6 @@ dataPost={
         }
       }
 
-updatepost(f:any){
-
-  let data = f.value
-
-  this.http.updatepost(data,this.dataPost.id).subscribe(resp => window.location.reload() ),
-  (err:HttpErrorResponse)=>console.log(err.message)
-}
 
 
 

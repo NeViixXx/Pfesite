@@ -10,6 +10,8 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
+
+  p: number = 1;
   posts:any
   dataPost={
     name:'',

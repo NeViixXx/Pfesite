@@ -155,5 +155,10 @@ participer(profil:any,id:any){
 contacter(profil:any){
   return this.http.post(`http://localhost:1000/Contact/`,profil)
 }
+
+getallusers(){
+  return this.http.get(`http://localhost:1000/user`,{headers:this.headerAdmin})
+}
+
 }
 

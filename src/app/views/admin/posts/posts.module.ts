@@ -4,7 +4,8 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { AddpostComponent } from './addpost/addpost.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostsComponent } from './posts/posts.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -22,7 +23,9 @@ import { PostsComponent } from './posts/posts.component';
     CommonModule,
     PostsRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule,
+    NgbModule,
   ]
 })
 export class PostsModule { }

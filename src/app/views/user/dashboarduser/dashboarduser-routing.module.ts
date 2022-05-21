@@ -8,12 +8,12 @@ import { PostsComponent } from './posts/posts.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  {path:'',component:DashboarduserComponent},
+  {path:'',component:PostsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'offres',component:OffresComponent},
   {path:'offres/Mesoffres',component:OffresuserComponent},
   {path:'Participations',component:ParticipationsComponent},
-  {path:'Posts',component:PostsComponent},
+
 
 
 ];

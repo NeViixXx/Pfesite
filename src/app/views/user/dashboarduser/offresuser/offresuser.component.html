@@ -3,8 +3,6 @@
         <h2 class="m-0 font-weight-bold text-primary text-center">Tous les Offres</h2>
     </div>
     <div class="card-body">
-        <ngb-pagination [(page)]="page" [pageSize]="pageSize" [collectionSize]="offreuser.length"></ngb-pagination>
-
         <div class="table table-responsive">
             <table class="table  " id="dataTable" width="100%" cellspacing="0">
                 <thead>
@@ -31,6 +29,7 @@
                     </tr>
                 </tbody>
             </table>
+            <ngb-pagination class="d-flex justify-content-center" [(page)]="page" [pageSize]="5" [collectionSize]="offreuser.length"></ngb-pagination>
         </div>
     </div>
 </div>

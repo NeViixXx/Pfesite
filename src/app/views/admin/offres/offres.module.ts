@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { AddoffreComponent } from './addoffre/addoffre.component';
 import { CondidatsoffreComponent } from './condidatsoffre/condidatsoffre.component';
 import { CondidatComponent } from './condidat/condidat.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CondidatComponent } from './condidat/condidat.component';
   imports: [
     CommonModule,
     OffresRoutingModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ]
 })
 export class OffresModule { }

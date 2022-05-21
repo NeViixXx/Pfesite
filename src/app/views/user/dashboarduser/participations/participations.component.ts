@@ -7,6 +7,7 @@ import { AuthuserService } from 'src/app/services/authuser.service';
   styleUrls: ['./participations.component.css']
 })
 export class ParticipationsComponent implements OnInit {
+  p: number = 1;
   Offres:any
   emailuser:any
   offreuser:any

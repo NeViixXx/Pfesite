@@ -9,6 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class OffresComponent implements OnInit {
   Offres : any
+  p: number = 1;
   constructor(private http:HttpService,private aroute:ActivatedRoute) {
     this.http.getalloffres().subscribe(data => this.Offres=data);
 

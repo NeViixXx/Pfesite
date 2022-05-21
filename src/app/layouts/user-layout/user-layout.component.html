@@ -5,33 +5,31 @@
             <a href="#"><img class="ms-3" width="145" src="../../../assets/logo.png" alt=""></a>
         </div>
         <ul class="list-unstyled components">
-            <li class="active">
-                <a routerLink="/user"><i
-                class="fas fa-tachometer-alt me-2"></i>Dashboard</a>
-                <li>
-                    <a routerLink="Posts"><i class="bi bi-stickies-fill me-2"></i>Postes</a>
-                </li>
-                <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-envelope me-2"></i>Offres</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a routerLink="offres">Tous les offres</a>
-                        </li>
-                        <li>
-                            <a routerLink="offres/Mesoffres">Vos offres</a>
-                        </li>
 
-                    </ul>
-                </li>
-                <li>
-                    <a routerLink="Participations"><i
+            <li>
+                <a routerLink="/user"><i class="bi bi-stickies-fill me-2"></i>Postes</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-envelope me-2"></i>Offres</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a routerLink="offres">Tous les offres</a>
+                    </li>
+                    <li>
+                        <a routerLink="offres/Mesoffres">Vos offres</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a routerLink="Participations"><i
                       class="bi bi-person-fill me-2"></i>Participations</a>
-                </li>
+            </li>
 
-                <li>
-                    <a routerLink="/" class="" (click)="logout()"><i
+            <li>
+                <a routerLink="/" class="" (click)="logout()"><i
               class="fas fa-sign-out-alt fa-sm fa-fw me-2"></i>Déconnexion</a>
-                </li>
+            </li>
         </ul>
 
 
@@ -119,15 +117,3 @@
     </div>
 
 </div>
-
-
-
-
-
-
-<!-- </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->

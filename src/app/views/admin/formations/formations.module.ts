@@ -6,6 +6,8 @@ import { FormationsComponent } from './formations/formations.component';
 import { AddformationComponent } from './addformation/addformation.component';
 import { EditformationComponent } from './editformation/editformation.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     FormationsRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    NgbModule,
   ]
 })
 export class FormationsModule { }

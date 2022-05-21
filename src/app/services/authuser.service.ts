@@ -63,6 +63,11 @@ participer(data:any){
   return this.http.post("http://localhost:1000/formation/Participations",data,{headers:this.headerUser})
 }
 
+addcommentaire(data:any,id:any){
+  return this.http.post(`http://localhost:1000/posts/${id}/commenter`,data,{headers:this.headerUser})
+}
+
+
   LoggedIn(){
     let token:any=localStorage.getItem('usertoken')
     if(!token) {

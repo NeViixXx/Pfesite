@@ -123,6 +123,10 @@ getpost(){
   return this.http.get("http://localhost:1000/posts/")
 }
 
+getsinglepost(id:any){
+  return this.http.get("http://localhost:1000/posts/"+id)
+}
+
 addpost(data:any){
   return this.http.post("http://localhost:1000/posts/",data,{headers:this.headerAdmin})
 }
@@ -138,6 +142,7 @@ updatepost(data:any,id:any)
   return this.http.put(`http://localhost:1000/posts/`+id,data,{headers:this.headerAdmin})
 
 }
+
 
 
 condidature(profil:any,id:any){

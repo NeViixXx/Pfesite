@@ -11,6 +11,8 @@ export class OffresuserComponent implements OnInit {
 Offres:any
 emailuser:any
 offreuser:any
+page = 4;
+pageSize= 10;
   constructor(private user:AuthuserService) {
     this.user.getprofile().subscribe(data => {
       this.emailuser=data

@@ -11,6 +11,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { OffresuserComponent } from './offresuser/offresuser.component';
 import { ParticipationsComponent } from './participations/participations.component';
 import { PostsComponent } from './posts/posts.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -38,6 +39,8 @@ import { PostsComponent } from './posts/posts.component';
     NzLayoutModule,
     FormsModule,
     MatPaginatorModule,
+    NgbModule
+
 
   ]
 })

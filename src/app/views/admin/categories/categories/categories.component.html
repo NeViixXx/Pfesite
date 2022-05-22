@@ -3,14 +3,14 @@
 <div class="card shadow mb-4">
     <div class="card-body">
         <a style="float: right;" routerLink="AjoutCategory">
-            <i class="bi bi-plus-square-fill  "></i>
+            <i class="bi bi-plus-square-fill  add"></i>
         </a>
         <div class="container-fluid d-flex flex-wrap justify-content-center ">
             <div class="card mt-5 m-2 " *ngFor="let e of Category; index as i " style="width: 18rem; ">
                 <img src="{{e.Image}} " height="200" width="200" class="card-img-top " alt="... ">
                 <div class="card-body ">
                     <h2 class="card-title text-center ">{{e.name}}</h2>
-                    <button class="btn btn-danger text-center" (click)="delete(e._id,i) ">Supprimer</button>
+                    <a (click)="delete(e._id,i)" class="d-flex justify-content-center"> <i class="fas fa-trash delete"></i></a>
                 </div>
             </div>
         </div>

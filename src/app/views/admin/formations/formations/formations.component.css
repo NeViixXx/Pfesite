@@ -10,3 +10,11 @@ i {
 .actions {
     font-size: 20px;
 }
+
+.delete {
+    color: #da1d1d;
+}
+
+.edit {
+    color: #4eb91c;
+}

@@ -67,3 +67,13 @@
     .actions {
         font-size: 20px;
     }
+
+    .delete {
+        color: #da1d1d;
+        font-size: 20px;
+    }
+
+    .edit {
+        color: #4eb91c;
+        font-size: 20px;
+    }

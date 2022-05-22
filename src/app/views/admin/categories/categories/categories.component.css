@@ -1,4 +1,4 @@
-i {
+.add {
     font-size: 35px;
     color: #0073BF;
 }
@@ -9,4 +9,9 @@ a {
 
 button {
     margin-left: 30%;
+}
+
+.delete {
+    font-size: 20px;
+    color: #da1d1d;
 }

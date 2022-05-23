@@ -29,7 +29,7 @@
                 </tfoot>
                 <tbody>
 
-                    <tr *ngFor="let item of Offres;index as i">
+                    <tr *ngFor="let item of Offres | paginate: { itemsPerPage: 5, currentPage: p};index as i">
                         <td>{{item.Type}}</td>
                         <td>{{item.name}}</td>
                         <td>{{item.Niveau}}</td>
@@ -46,6 +46,8 @@
 
                 </tbody>
             </table>
+            <ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="Offres?.length"></ngb-pagination>
+
         </div>
     </div>
 </div>

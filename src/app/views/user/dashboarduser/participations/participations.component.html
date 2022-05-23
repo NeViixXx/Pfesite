@@ -1,32 +1,31 @@
-<div class="card shadow">
-    <div class="card-header">
-        <h2 class="font-weight-bold text-primary text-center">Vos Participations</h2>
-    </div>
-    <div class="card-body">
-        <table class="table table-responsive">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nom Offre</th>
-                    <th scope="col">Description</th>
-                    <th scope="col" width="100">Ajoutée à</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let e of offreuser | paginate: { itemsPerPage: 5, currentPage: p } ; index as i">
-                    <th scope="row">{{i+1}}</th>
-                    <td>
-                        {{e.name}}
-                    </td>
-                    <td>
-                        {{e.Description}}
-                    </td>
-                    <td>
-                        {{e.updatedAt | date}}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="offreuser.length"></ngb-pagination>
+<h1 class="text-center text-primary">Vos participation</h1>
+<div class="card shadow p-2">
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nom Offre</th>
+                <th scope="col">Description</th>
+                <th scope="col" width="100">Ajoutée à</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="
+            let e of offreuser | paginate: { itemsPerPage: 5, currentPage: p };
+            index as i
+          ">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>
+                    {{ e.name }}
+                </td>
+                <td>
+                    {{ e.Description }}
+                </td>
+                <td>
+                    {{ e.updatedAt | date }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
+<ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="offreuser?.length"></ngb-pagination>

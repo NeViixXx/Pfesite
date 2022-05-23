@@ -143,8 +143,6 @@ updatepost(data:any,id:any)
 
 }
 
-
-
 condidature(profil:any,id:any){
   return this.http.post(`http://localhost:1000/Offre/${id}/postuler`,profil)
 }
@@ -160,5 +158,9 @@ getallusers(){
   return this.http.get(`http://localhost:1000/user`,{headers:this.headerAdmin})
 }
 
+
+deleteusers(id:any){
+  return this.http.delete(`http://localhost:1000/user/`+id,{headers:this.headerAdmin})
+}
 }
 

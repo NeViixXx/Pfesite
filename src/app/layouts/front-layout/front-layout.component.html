@@ -41,7 +41,7 @@
                         </li>
 
 
-                        <button *ngIf="!Logged" class="btn" routerLink="/login"> Se Connecter </button>
+                        <button *ngIf="!Logged && !adminlogged" class="btn" routerLink="/login"> Se Connecter </button>
                         <ul *ngIf="Logged" class="nav">
                             <li class="dropdown">
                                 <a class="dropbtn d-flex" data-bs-toggle="dropdown" to="#">

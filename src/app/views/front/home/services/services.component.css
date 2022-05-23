@@ -59,3 +59,19 @@
 #services {
     padding-top: 50px;
 }
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 24px;
+    }
+    .contenu p {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contenu h1 {
+        margin-right: 20px;
+    }
+    .hex {
+        margin-right: 90px;
+    }
+}

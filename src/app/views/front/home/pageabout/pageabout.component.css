@@ -38,3 +38,9 @@ h2 {
     font-weight: bold;
     color: #0073BF;
 }
+
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 22px;
+    }
+}

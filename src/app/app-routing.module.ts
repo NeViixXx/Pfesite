@@ -38,6 +38,8 @@ const routes: Routes = [
     .then(m=>m.ParticipantModule)},
     {path:'Posts',loadChildren:()=>import('./views/admin/posts/posts.module')
     .then(m=>m.PostsModule)},
+    {path:'Users',loadChildren:()=>import('./views/admin/users/users.module')
+    .then(m=>m.UsersModule)},
 
 
 

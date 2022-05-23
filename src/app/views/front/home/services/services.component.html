@@ -1,11 +1,11 @@
 <main id="services">
     <h1 class="title m-5 ">Nos Services</h1>
     <div class="container-fluid d-inline-flex flex-wrap justify-content-center">
-        <ul class="col-lg-4" *ngFor="let s of Services">
+        <ul class="col-lg-4 col-sm-12" *ngFor="let s of Services">
             <div class="hexagon">
                 <li class="hex shadow-lg">
                     <div class=" hex-background">
-                        <img src={{s.Image}}>
+                        <img class="servimg" src={{s.Image}}>
                     </div>
                 </li>
                 <div class="contenu">

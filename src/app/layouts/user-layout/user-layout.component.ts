@@ -29,16 +29,13 @@ userprofile:any
   }
 
   constructor(private route:Router , private http:HttpService , private userdata:AuthuserService) {
+    this.userdata.getprofile().subscribe(data => {
+      this.userprofile=data
+    })
     this.http.getallcategory().subscribe(data => this.Category=data);
 
 
     this.http.getallservices().subscribe(data => this.Services=data);
-
-    this.userdata.getprofile().subscribe(data => {
-      this.userprofile=data
-    })
-
-
 
 
   }

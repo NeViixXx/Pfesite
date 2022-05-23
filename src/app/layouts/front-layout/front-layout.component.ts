@@ -1,3 +1,4 @@
+import { AuthadminService } from './../../services/authadmin.service';
 
 import { Component, OnInit,HostListener, HostBinding , Directive, Inject, Renderer2 } from '@angular/core';
 
@@ -21,6 +22,7 @@ export class FrontLayoutComponent implements OnInit {
 Services : any
 Category : any
 Logged : boolean = false;
+adminlogged : boolean = false;
 user:any
 navbarfixed:any
 userprofile:any
@@ -37,13 +39,14 @@ userprofile:any
   }
 
 
-  constructor(private http : HttpService , private route:Router , private userdata:AuthuserService , private router:Router ) {
+  constructor(private http : HttpService , private route:Router , private userdata:AuthuserService , private router:Router , private admin:AuthadminService ) {
     this.http.getallcategory().subscribe(data => this.Category=data);
 
 this.Logged=this.userdata.LoggedIn()
     this.userdata.getprofile().subscribe(data => {
       this.userprofile=data
     })
+this.adminlogged=this.admin.LoggedIn()
 
 
     this.http.getallservices().subscribe(data => this.Services=data);

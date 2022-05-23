@@ -10,7 +10,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./offres.component.css']
 })
 export class OffresComponent implements OnInit {
-
+p:number=0
   Offres : any
   oneOffre:any
 dataOffre={

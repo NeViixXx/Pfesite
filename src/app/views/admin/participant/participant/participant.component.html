@@ -15,7 +15,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let e of filtreddata ; index as i">
+                        <tr *ngFor="let e of filtreddata | paginate: { itemsPerPage: 10, currentPage: p}; index as i">
                             <th scope="row">{{i+1}}</th>
                             <td>{{e.name}}</td>
                             <td>{{e.Participants.length}}</td>
@@ -27,6 +27,8 @@
 
                     </tbody>
                 </table>
+                <ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="filtreddata?.length"></ngb-pagination>
+
             </div>
         </div>
     </div>

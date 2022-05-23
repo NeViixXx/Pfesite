@@ -52,7 +52,6 @@ h1 {
 
 .content-section .content p {
     margin-top: 10px;
-    font-family: sans-serif;
     font-size: 18px;
     line-height: 1.5;
 }
@@ -79,6 +78,30 @@ h1 {
 }
 
 @media screen and (max-width: 768px) {
+    div {
+        margin-top: -80px;
+    }
+    div .title h1 {
+        font-size: 24px;
+    }
+    .content-section .content h2 {
+        margin-top: 18px;
+        color: #0073bf;
+        font-size: 20px;
+    }
+    .content-section .content p {
+        font-size: 16px;
+    }
+    .content-section .content .button a {
+        background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 12px 40px;
+        text-decoration: none;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+    }
     .container {
         width: 80%;
         display: block;
@@ -86,24 +109,23 @@ h1 {
         padding-top: 50px;
     }
     .content-section {
-        float: none;
         width: 100%;
         display: block;
         margin: auto;
     }
     .image-section {
-        float: none;
+        float: center;
         width: 100%;
     }
     .image-section img {
-        width: 100%;
+        width: 80%;
         height: auto;
         display: block;
         margin: auto;
     }
     .content-section .title {
         text-align: center;
-        font-size: 19px;
+        font-size: 15px;
         margin-bottom: 40px;
     }
     .content-section .content .button {
@@ -113,60 +135,3 @@ h1 {
         padding: 9px 30px;
     }
 }
-
-
-/*
-h1 {
-    font: 2.5rem 'Roboto', sans-serif;
-    font-weight: bold;
-    color: #0073BF;
-}
-
-.container {
-    margin-top: 5rem;
-    padding-top: 5rem;
-    margin-bottom: 5rem;
-}
-
-section {
-    max-width: 600px;
-}
-
-.btn {
-    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    margin: 20px;
-    width: 10em;
-    margin-left: 10em;
-}
-
-.btn:hover {
-    transition: .5s ease-in-out;
-    background: #0073BF;
-    transform: scale(1.05);
-}
-
-.btn span {
-    color: white;
-}
-
-img {
-    max-width: 400px;
-}
-
-@media (max-width: 820px) {
-    .container {
-        margin-top: 0;
-        padding-top: 0;
-    }
-    img {
-        width: 250px;
-        margin-left: 100px;
-    }
-    .btn {
-        margin-left: 120px;
-    }
-}
-*/

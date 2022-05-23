@@ -1,0 +1,31 @@
+<h1 class="text-center text-primary">Tous les Utilisateurs</h1>
+<div class="card shadow">
+    <div class="card-body">
+        <table class="table table-responsive">
+            <thead>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Prénom</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Email</th>
+                <th scope="col">Téléphone</th>
+                <th scope="col">Action</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let data of usersdata | paginate: { itemsPerPage: 20, currentPage: p } ; index as i">
+                    <td>{{i+1}}</td>
+                    <td><img src="{{data.avatar}}" class="rounded" height="30" width="30"></td>
+                    <td>{{data.fname}}</td>
+                    <td>{{data.lname}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.phonenum}}</td>
+                    <td>
+                        <a class="delete" (click)="delete(data._id,i)"> <i class="fas fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="usersdata?.length"></ngb-pagination>
+
+</div>

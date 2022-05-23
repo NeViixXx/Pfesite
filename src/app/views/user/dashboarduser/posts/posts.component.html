@@ -26,13 +26,13 @@
             <div class="modal-body">
                 <div class="d-flex flex-wrap ms-3">
                     <div class="col-lg-6">
-                        <div class="">
-                            <div class="">
-                                <div class="m-4">
-                                    <img class="active" [src]="imageUrl" width="400" height="300">
+                        <div>
+                            <div>
+                                <div class="m-2">
+                                    <img class="active" [src]="imageUrl" width="400" height="300" style="object-fit: cover;">
                                 </div>
-                                <div class="d-flex flex-wrap border">
-                                    <img *ngFor="let e of dataPost.Images" class="m-2 col-lg-2" #imgselected (click)="changeImage(imgselected)" src="{{e}}" height="100" width="100">
+                                <div class="d-flex flex-wrap">
+                                    <img *ngFor="let e of dataPost.Images" class="m-2 col-lg-2" #imgselected (click)="changeImage(imgselected)" src="{{e}}" style="object-fit: cover;" height="100" width="150">
                                 </div>
                             </div>
                         </div>
@@ -54,14 +54,14 @@
                                     </div>
                                 </div>
 
-                                <form #f="ngForm">
-                                    <div class="d-flex m-1">
-                                        <img class="rounded me-2" height="40" width="40" src="{{userprofile?.avatar}}">
-                                        <input type="text" (keydown.enter)="addcomment(f)" class=" form-control " placeholder="Saisir votre commentaire " name="commentaire" #commentaire="ngModel" required ngModel>
-                                    </div>
-                                </form>
-                            </div>
 
+                            </div>
+                            <form #f="ngForm">
+                                <div class="d-flex m-1">
+                                    <img class="rounded me-2" height="40" width="40" src="{{userprofile?.avatar}}">
+                                    <input type="text" (keydown.enter)="addcomment(f)" class=" form-control " placeholder="Saisir votre commentaire " name="commentaire" #commentaire="ngModel" required ngModel>
+                                </div>
+                            </form>
 
                         </div>
                     </div>

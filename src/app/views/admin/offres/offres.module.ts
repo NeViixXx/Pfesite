@@ -8,6 +8,7 @@ import { AddoffreComponent } from './addoffre/addoffre.component';
 import { CondidatsoffreComponent } from './condidatsoffre/condidatsoffre.component';
 import { CondidatComponent } from './condidat/condidat.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     CommonModule,
     OffresRoutingModule,
     FormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbModule
   ]
 })
 export class OffresModule { }

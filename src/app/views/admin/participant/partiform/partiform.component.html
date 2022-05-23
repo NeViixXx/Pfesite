@@ -18,7 +18,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let e of dataform.Participants ; index as i">
+                        <tr *ngFor="let e of dataform.Participants | paginate: { itemsPerPage: 10, currentPage: p} ; index as i">
                             <th scope="row">{{i+1}}</th>
                             <td>{{e.name}}</td>
                             <td>{{e.namesoc}}</td>
@@ -32,6 +32,8 @@
 
                     </tbody>
                 </table>
+                <ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="dataform.Participants?.length"></ngb-pagination>
+
             </div>
         </div>
     </div>

@@ -58,8 +58,11 @@ Comments: any[] =[]
 
 addcomment(f:NgForm){
   let data = f.value
-  this.userdata.addcommentaire(data,this.dataPost.id).subscribe((data) => {f.value.reset
-
+  this.userdata.addcommentaire(data,this.dataPost.id).subscribe((data) => {
+    this.http.getsinglepost(this.dataPost.id).subscribe(data => {this.singlepost=data
+      this.Comments=this.singlepost.Comments
+    })
+f.reset()
 
   }
   )

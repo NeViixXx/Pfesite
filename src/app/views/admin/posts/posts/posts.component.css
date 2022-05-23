@@ -103,6 +103,7 @@
     bottom: 0;
     right: 0;
     margin: 20px;
+    font-weight: 500;
 }
 
 .blog-card .description .read-more a {
@@ -112,7 +113,7 @@
 
 .blog-card .description .read-more a:after {
     font-family: "Font Awesome 5 Pro";
-    font-weight: 200;
+    font-weight: 800;
     content: "\f061";
     margin-left: -10px;
     opacity: 0;

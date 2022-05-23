@@ -10,6 +10,7 @@ import { HttpService } from 'src/app/services/http.service';
 export class PartiformComponent implements OnInit {
 id:any
 dataform:any
+p:number=0
   constructor(private http:HttpService , private aroute:ActivatedRoute) {
     this.aroute.params.subscribe(data => this.id=data['id']);
     this.http.getsignleformation(this.id).subscribe(data => {console.log(data)

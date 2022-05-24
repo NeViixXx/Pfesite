@@ -8,6 +8,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./formations.component.css']
 })
 export class FormationsComponent implements OnInit {
+  p:number=0
   name:any
   cat:any
 

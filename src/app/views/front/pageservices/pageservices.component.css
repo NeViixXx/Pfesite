@@ -54,3 +54,15 @@
         height: auto;
         max-width: 25em;
     }
+
+    @media screen and (max-width: 768px) {
+        img {
+            max-width: 20em;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        h2 {
+            font-size: 20px;
+        }
+    }

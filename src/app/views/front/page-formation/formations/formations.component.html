@@ -1,4 +1,4 @@
-<h1>{{name}}</h1>
+<!-- <h1>{{name}}</h1>
 <div class="wrapper">
     <div class="alert alert-danger" *ngIf="cat.length===0">
         <h2 class="pas-formation text-center">pas de formations dans cette catégorie </h2>
@@ -21,4 +21,36 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div> -->
+
+
+<!-- <div class="container mb-5">
+    <ul class="honeycomb">
+        <li class="honeycomb-cell" *ngFor="let e of cat">
+            <a href="/Formation/{{e._id}}">
+                <img class="honeycomb-cell__image" src="{{e.Image}}">
+                <div class="honeycomb-cell__title">{{e.name}}</div>
+            </a>
+        </li>
+
+    </ul>
+</div> -->
+
+
+<div class="grid m-5">
+    <ul id="hexGrid">
+        <li class="hex" *ngFor="let e of cat | paginate: { itemsPerPage: 9, currentPage: p }">
+            <div class="hexIn">
+                <a class="hexLink" href="/Formation/{{e._id}}">
+                    <!-- <div class='img d-flex justify-content-center' [ngStyle]="{'background-image': 'url(' + e.Image + ')', 'background-size': 'cover'  }"> -->
+                    <div class='img d-flex justify-content-center'>
+                        <img src="{{e.Image}}" class="img" alt="">
+                    </div>
+                    <h1 id="demo1">{{e.name}}</h1>
+
+                </a>
+            </div>
+        </li>
+    </ul>
+    <ngb-pagination class="d-flex justify-content-center mt-5" [(page)]="p" [pageSize]="9" [collectionSize]="cat.length"></ngb-pagination>
+</div>

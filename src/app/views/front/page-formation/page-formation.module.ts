@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,7 +17,9 @@ import {  ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     PageFormationRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    NgxPaginationModule
   ]
 })
 export class PageFormationModule { }

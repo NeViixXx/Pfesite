@@ -3,8 +3,12 @@
 }
 
 img {
-    max-width: 100%;
+    max-width: 400px;
+    height: 400px;
+    max-height: fit-content;
     border-radius: 30px;
+    object-fit: cover;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
 
 .duree {

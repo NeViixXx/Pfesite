@@ -1,192 +1,205 @@
-* {
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-h1 {
-    color: #0073BF;
-    font: 2.5em 'Roboto', sans-serif;
-    font-weight: bolder;
-    text-align: center;
-    margin: 2rem 0;
-}
-
-.pas-formation {
-    font: 4em 'Roboto', sans-serif;
-    font-weight: normal;
-    text-align: center;
-}
-
-.wrapper {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 80rem;
-}
-
-.cols {
-    display: -webkit-box;
-    display: -ms-flexbox;
+#hexGrid {
     display: flex;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+    list-style-type: none;
 }
 
-.col {
-    width: calc(25% - 2rem);
-    margin: 1rem;
-    cursor: pointer;
-}
-
-.container {
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-perspective: 1000px;
-    perspective: 1000px;
-}
-
-.front,
-.back {
-    background-size: cover;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    background-position: center;
-    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -webkit-backface-visibility: hidden;
+.hex {
+    position: relative;
+    visibility: hidden;
+    outline: 1px solid transparent;
+    /* fix for jagged edges in FF on hover transition */
+    transition: all 0.5s;
     backface-visibility: hidden;
-    text-align: center;
-    min-height: 280px;
-    height: auto;
-    border-radius: 10px;
-    color: #fff;
-    font-size: 1.5rem;
+    will-change: transform;
+    transition: all 0.5s;
 }
 
-.back {
-    background: rgba(0, 196, 255, 1);
-    background: -webkit-linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-    background: -o-linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-}
-
-.front:after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
+.hex::after {
     content: '';
     display: block;
-    opacity: .6;
-    background: linear-gradient(150deg, #ffffff00 0%, #000000 100%);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    border-radius: 10px;
+    padding-bottom: 86.602%;
+    /* =  100 / tan(60) * 1.5 */
 }
 
-.container:hover .front,
-.container:hover .back {
-    -webkit-transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    -o-transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
-    transition: transform .7s cubic-bezier(0.4, 0.2, 0.2, 1), -webkit-transform .7s cubic-bezier(0.4, 0.2, 0.2, 1);
+.hexIn {
+    position: absolute;
+    width: 96%;
+    padding-bottom: 110.851%;
+    /* =  width / sin(60) */
+    margin: 2%;
+    overflow: hidden;
+    visibility: hidden;
+    outline: 1px solid transparent;
+    /* fix for jagged edges in FF on hover transition */
+    -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
+    transition: all 0.5s;
 }
 
-.back {
+.hexIn * {
+    position: absolute;
+    visibility: visible;
+    outline: 1px solid transparent;
+    /* fix for jagged edges in FF on hover transition */
+}
+
+.hexLink {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+    -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+    transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
+}
+
+
+/*** HEX CONTENT **********************************************************************/
+
+.hex img {
+    left: -100%;
+    right: -100%;
+    width: auto;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.hex h1 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    hyphens: auto;
+    word-break: break-word;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.75em;
+    transition: opacity 350ms;
+}
+
+#demo1 {
+    color: #fff;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+.img {
     position: absolute;
     top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
-.inner {
-    -webkit-transform: translateY(-50%) translateZ(60px) scale(0.94);
-    transform: translateY(-50%) translateZ(60px) scale(0.94);
-    top: 50%;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    outline: 1px solid transparent;
-    -webkit-perspective: inherit;
-    perspective: inherit;
-    z-index: 2;
+
+/*** HOVER EFFECT  **********************************************************************/
+
+.hexIn:hover .img:before,
+.hexIn:hover .img:after,
+.hexIn:hover .hexLink {
+    opacity: 1;
 }
 
-.container .back {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
 
-.container .front {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
+/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
 
-.container:hover .back {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
-
-.container:hover .front {
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-}
-
-.front .inner p {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.front .inner span {
-    color: rgba(0, 196, 255, 1);
-    font-weight: 300px;
-}
-
-@media screen and (max-width: 64rem) {
-    .col {
-        width: calc(33.333333% - 2rem);
+@media (min-width:1201px) {
+    /* <- 5-4  hexagons per row */
+    #hexGrid {
+        padding-bottom: 4.4%
     }
-    h2 {
-        font-size: 16px;
+    .hex {
+        width: 20%;
+        /* = 100 / 5 */
+    }
+    .hex:nth-child(9n+6) {
+        /* first hexagon of even rows */
+        margin-left: 10%;
+        /* = width of .hex / 2  to indent even rows */
     }
 }
 
-@media screen and (max-width: 48rem) {
-    .col {
-        width: calc(50% - 2rem);
+@media (max-width: 1200px) and (min-width:901px) {
+    /* <- 4-3  hexagons per row */
+    #hexGrid {
+        padding-bottom: 5.5%;
+        font-size: 13px;
     }
-    h2 {
+    .hex {
+        width: 25%;
+        /* = 100 / 4 */
+    }
+    .hex:nth-child(7n+5) {
+        /* first hexagon of even rows */
+        margin-left: 12.5%;
+        /* = width of .hex / 2  to indent even rows */
+    }
+}
+
+@media (max-width: 900px) and (min-width:601px) {
+    /* <- 3-2  hexagons per row */
+    #hexGrid {
+        padding-bottom: 7.4%;
         font-size: 14px;
     }
+    .hex {
+        width: 33.333%;
+        /* = 100 / 3 */
+    }
+    .hex:nth-child(5n+4) {
+        /* first hexagon of even rows */
+        margin-left: 16.666%;
+        /* = width of .hex / 2  to indent even rows */
+    }
 }
 
-@media screen and (max-width: 32rem) {
-    .col {
-        width: 100%;
-        margin: 0 0 2rem 0;
-    }
-    h2 {
+@media (max-width: 600px) {
+    /* <- 2-1  hexagons per row */
+    #hexGrid {
+        padding-bottom: 11.2%;
         font-size: 12px;
     }
+    .hex {
+        width: 50%;
+        /* = 100 / 3 */
+    }
+    .hex:nth-child(3n+3) {
+        /* first hexagon of even rows */
+        margin-left: 25%;
+        /* = width of .hex / 2  to indent even rows */
+    }
+}
+
+@media (max-width: 400px) {
+    #hexGrid {
+        font-size: 8px;
+    }
+}
+
+#mosaic_wrapper {
+    width: 960px;
+    /* (panel_height+panel_margin*2)*panels per row = (100px+(10px*2))*8 */
+}
+
+#mosaic_wrapper .panel {
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background: url('../../../../../assets/about.png') no-repeat 0 0 fixed;
 }

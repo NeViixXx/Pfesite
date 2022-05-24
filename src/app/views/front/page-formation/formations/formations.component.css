@@ -30,7 +30,6 @@
     width: 96%;
     padding-bottom: 110.851%;
     /* =  width / sin(60) */
-    margin: 2%;
     overflow: hidden;
     visibility: hidden;
     outline: 1px solid transparent;
@@ -38,13 +37,16 @@
     -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
     -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
     transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-    transition: all 0.5s;
 }
 
 .hexIn * {
     position: absolute;
     visibility: visible;
     outline: 1px solid transparent;
+    background: linear-gradient(rgba(0, 195, 255, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+    opacity: 1;
+    justify-content: center;
+    text-align: center;
     /* fix for jagged edges in FF on hover transition */
 }
 
@@ -76,21 +78,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     hyphens: auto;
     word-break: break-word;
     text-transform: uppercase;
     color: #fff;
-    font-weight: 700;
-    font-size: 1.75em;
-    transition: opacity 350ms;
-}
-
-#demo1 {
-    color: #fff;
+    font-weight: 400;
+    font-size: 1.6em;
     text-transform: capitalize;
-    text-align: center;
-    font-size: 1.5em;
-    z-index: 1;
 }
 
 .img {
@@ -109,10 +104,9 @@
 
 /*** HOVER EFFECT  **********************************************************************/
 
-.hexIn:hover .img:before,
-.hexIn:hover .img:after,
-.hexIn:hover .hexLink {
-    opacity: 1;
+.hexIn *:hover {
+    background: none;
+    color: rgba(0, 0, 0, 0.0);
 }
 
 
@@ -189,17 +183,4 @@
     #hexGrid {
         font-size: 8px;
     }
-}
-
-#mosaic_wrapper {
-    width: 960px;
-    /* (panel_height+panel_margin*2)*panels per row = (100px+(10px*2))*8 */
-}
-
-#mosaic_wrapper .panel {
-    float: left;
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-    background: url('../../../../../assets/about.png') no-repeat 0 0 fixed;
 }

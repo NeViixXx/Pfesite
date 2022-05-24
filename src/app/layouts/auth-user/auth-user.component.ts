@@ -12,18 +12,19 @@ export class AuthUserComponent implements OnInit {
   datarecive:any
   url:any
   user:any
+  userprofile:any
   constructor(private auth:AuthuserService ,private route:Router , private aroute:ActivatedRoute) {
-
+    this.url=this.aroute.snapshot.queryParams['returnUrl'] || '/user/'
+    if (this.auth.LoggedIn()){
+        this.route.navigate(['/user'])
+    }
 
 
 
   }
 
   ngOnInit(): void {
-    this.url=this.aroute.snapshot.queryParams['returnUrl'] || '/user/'
-    if (this.auth.LoggedIn()){
-        this.route.navigate(['/user'])
-    }
+
   }
 
   loginuser(user:any) {
@@ -31,7 +32,12 @@ export class AuthUserComponent implements OnInit {
 this.auth.login(data).subscribe(response =>
   {this.datarecive=response
     this.auth.Savedata(this.datarecive)
-    this.route.navigate([this.url])
+    this.auth.getprofile().subscribe(data => {
+      this.userprofile=data
+      this.route.navigate([this.url])
+    })
+
+
   }
 
 )}

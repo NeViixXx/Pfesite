@@ -38,6 +38,10 @@ datarecive:any
                 validators: [
                    Validators.required
                 ]},],
+                confpassword: ['', {
+                  validators: [
+                     Validators.required
+                  ]},],
                 birthdate: ['', {
                   validators: [
                      Validators.required,
@@ -83,6 +87,10 @@ datarecive:any
     return this.register.controls['password'];
 }
 
+get confpassword() {
+  return this.register.controls['confpassword'];
+}
+
 get birthdate() {
   return this.register.controls['birthdate'];
 }
@@ -102,19 +110,12 @@ onFileSelected(event:any) {
   add(){
     let data=this.register.value
     data.avatar=this.img
-    this.http.register(data).subscribe(data =>  {
-      this.datarecive=data
-      this.auth.Savedata(this.datarecive.token),
-      this.route.navigate(['/user'])},
-    // The 2nd callback handles errors.
-    (err) => this.verif=2,
-    // The 3rd callback handles the "complete" event.
-    () => this.verif=1
-    )
-
-
+    if (data.password === data.confpassword)
+{
+    this.http.register(data).subscribe(resp =>  {
+      this.route.navigate(['/login'])})
   }
-
+}
   ngOnInit(): void {
   }
 

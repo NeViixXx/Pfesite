@@ -32,10 +32,7 @@ export class AuthUserComponent implements OnInit {
 this.auth.login(data).subscribe(response =>
   {this.datarecive=response
     this.auth.Savedata(this.datarecive)
-    this.auth.getprofile().subscribe(data => {
-      this.userprofile=data
-      this.route.navigate([this.url])
-    })
+
 
 
   }

@@ -43,9 +43,10 @@ userprofile:any
     this.http.getallcategory().subscribe(data => this.Category=data);
 
 this.Logged=this.userdata.LoggedIn()
+if (this.Logged){
     this.userdata.getprofile().subscribe(data => {
       this.userprofile=data
-    })
+    })}
 this.adminlogged=this.admin.LoggedIn()
 
 

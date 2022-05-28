@@ -1,36 +1,23 @@
 .login-block {
+    background-color: #f4f4f4;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     float: left;
     width: 100%;
     padding: 50px 0;
 }
 
-.btn {
-    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-    color: white;
-    border: none;
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-.btn:hover {
-    transition: 1s ease-in-out;
-    background: #0073BF;
-}
-
-.btn span {
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
+.banner-sec {
+    background: url('../../../assets/wallpapercopie.jpg') no-repeat left bottom;
+    background-size: cover;
+    min-height: 500px;
+    border-radius: 0 10px 10px 0;
+    padding: 0;
 }
 
 .container {
     background: #fff;
     border-radius: 10px;
-    box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .1), 0 800px 0 #fff inset;
 }
 
 .carousel-inner {
@@ -47,12 +34,19 @@
     position: relative;
 }
 
+.login-sec .copy-text {
+    position: absolute;
+    width: 80%;
+    bottom: 20px;
+    font-size: 13px;
+    text-align: center;
+}
+
 .login-sec h2 {
     margin-bottom: 30px;
     font-weight: 800;
     font-size: 30px;
     color: #0073BF;
-    ;
 }
 
 .login-sec h2:after {
@@ -60,12 +54,17 @@
     width: 100px;
     height: 5px;
     background: #0073BF;
-    ;
     display: block;
     margin-top: 20px;
     border-radius: 3px;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+}
+
+.btn-login {
+    background: #0073BF;
+    color: #fff;
+    font-weight: 600;
 }
 
 .banner-text {
@@ -84,12 +83,34 @@
     content: " ";
     width: 100px;
     height: 5px;
-    background: #FFF;
+    background: #fff;
     display: block;
     margin-top: 20px;
     border-radius: 3px;
 }
 
-.banner-text p {
-    color: #fff;
+.pull-right {
+    float: right;
+}
+
+.width100 {
+    width: 100%;
+}
+
+.form-control {
+    border-radius: 3px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1), 0 0 2px 0 rgba(0, 0, 0, 0.1);
+    border: solid 1px #bcc2ce;
+}
+
+a {
+    color: #0073BF;
+}
+
+a:hover {
+    color: rgba(0, 196, 255, 1);
+}
+
+svg {
+    background-size: 125% auto;
 }

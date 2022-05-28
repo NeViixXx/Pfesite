@@ -14,7 +14,6 @@ export class FormationsComponent implements OnInit {
 
   constructor(private http:HttpService , private aroute:ActivatedRoute ) {
     this.aroute.params.subscribe(data => this.name=data['name']);
-
     this.http.getformationcat(this.name).subscribe(form => this.cat=form  );
   }
 

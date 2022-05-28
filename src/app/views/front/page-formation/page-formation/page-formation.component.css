@@ -22,12 +22,13 @@ img {
 }
 
 .informations {
-    background: #CBCCCC;
-    border-radius: 10px;
     height: 5rem;
     width: 20rem;
     color: white;
-    margin-left: 20%;
+}
+
+i {
+    color: lightgray;
 }
 
 .lieux {
@@ -78,13 +79,12 @@ h2 {
 }
 
 h3 {
-    display: block;
     text-align: justify;
-    color: white;
+    color: rgb(102, 102, 102);
 }
 
 h3 span {
-    color: #0073BF;
+    color: lightgray;
     margin-right: 1em;
 }
 

@@ -139,7 +139,59 @@ nav {
     top: -50px;
 }
 
+
+/* From uiverse.io */
+
 .btn {
+    --color: #0073BF;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 16px;
+    border-radius: 10px;
+    font-weight: 500;
+    color: var(--color);
+}
+
+.btn:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.btn:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+}
+
+.btn:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+.btn:active:before {
+    background: #0073BF;
+    transition: background 0s;
+}
+
+
+/* .btn {
     background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
     color: white;
     border: none;
@@ -161,7 +213,7 @@ nav {
     color: white;
     font-size: 18px;
     font-weight: 100;
-}
+} */
 
 *,
 *:before,
@@ -231,6 +283,21 @@ h2 {
     color: #dddddd;
 }
 
+@media screen and (min-width: 600px) {
+    .r-footer>* {
+        flex: 1;
+    }
+    .features {
+        flex-grow: 1;
+    }
+    .l-footer {
+        flex: 1 0px;
+    }
+    .r-footer {
+        flex: 1 0px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .r-footer>* {
         flex: 1;
@@ -246,9 +313,6 @@ h2 {
     }
     .plce {
         margin-left: -20px;
-    }
-    a {
-        margin-left: 40px;
     }
 }
 

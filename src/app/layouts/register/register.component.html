@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="card shadow-lg m-5">
         <form [formGroup]="register" (ngSubmit)="add()">
 
@@ -90,9 +90,9 @@
                 <div class=" alert alert-danger " role="alert " *ngIf="password.touched && password.hasError('required')">
                     Mot de passe
                 </div>
-                <!-- <div class=" alert alert-danger " role="alert " *ngIf="password.touched && confpassword.hasError('required')">
+                <div class=" alert alert-danger " role="alert " *ngIf="password.touched && confpassword.hasError('required')">
                     Mot de passe
-                </div> -->
+                </div>
                 <div class=" alert alert-danger " role="alert " *ngIf="birthdate.touched && birthdate.hasError('required')">
                     Date de naissance obligatoire
                 </div>
@@ -116,4 +116,86 @@
 
         </form>
     </div>
-</div>
+</div> -->
+
+
+
+<form class="card shadow" [formGroup]="register" (ngSubmit)="add()">
+
+    <h1>Créez un compte</h1>
+
+    <fieldset>
+
+        <legend><span class="number">1</span>Informations Générales</legend>
+
+        <label for="name">Prénom:</label>
+        <input type="text" id="name" name="fname" formControlName="fname" required>
+
+        <label for="name">Nom:</label>
+        <input type="text" id="name" name="lname" formControlName="lname" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" formControlName="email" required>
+
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" name="password" formControlName="password" required>
+
+        <label for="password">Confirm mot de passe:</label>
+        <input type="password" id="password" name="confpassword" formControlName="confpassword" required>
+
+
+    </fieldset>
+
+    <fieldset>
+
+        <legend><span class="number">2</span>Profile</legend>
+
+        <label for="phonenum">Télephone </label>
+        <input type="text" id="phonenum" name="phonenum" formControlName="phonenum" required>
+
+        <label for="birthdate">Date de naissance </label>
+        <input type="date" name="birthdate" id="exampleInputname" formControlName="birthdate" required>
+
+
+        <label for="formFile">Photo du profile : </label>
+        <input id="avatar" type="file" id="file " name="avatar" (change)="onFileSelected($event)" formControlName="avatar" accept=".jpg,.jpeg,.png">
+
+
+        <img *ngIf="img" class="img-fluid rounded" src="{{img}}" style="width: 500px;height: 250px; object-fit: cover;">
+
+        <div>
+            <div class=" alert alert-danger " role="alert " *ngIf="lname.touched && lname.hasError('required')">
+                Entrez votre nom
+            </div>
+            <div class=" alert alert-danger " role="alert " *ngIf="fname.touched && fname.hasError('required')">
+                Entrez votre Prénom
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="email.touched && email.hasError('required')">
+                Entrez Votre Email
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf=" email.hasError('email')">
+                Email invalide
+            </div>
+            <div class=" alert alert-danger " role="alert " *ngIf="password.touched && password.hasError('required')">
+                Mot de passe
+            </div>
+            <div class=" alert alert-danger " role="alert " *ngIf="password.touched && confpassword.hasError('required')">
+                Mot de passe
+            </div>
+            <div class=" alert alert-danger " role="alert " *ngIf="birthdate.touched && birthdate.hasError('required')">
+                Date de naissance obligatoire
+            </div>
+            <div class=" alert alert-danger " role="alert " *ngIf="phonenum.touched && phonenum.hasError('required')">
+                Entrez votre numéro de télephone
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="phonenum.touched && phonenum.hasError('minlength') && phonenum.hasError('maxlength') ">
+                Numéro invalide
+            </div>
+            <div class=" alert alert-danger " role="alert " *ngIf="phonenum.touched && phonenum.hasError('pattern')">
+                Numéro invalide
+            </div>
+        </div>
+
+    </fieldset>
+    <button type="submit" [disabled]="register.invalid">Créez</button>
+</form>

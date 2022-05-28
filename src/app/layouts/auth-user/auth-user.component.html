@@ -25,7 +25,7 @@
 
 </div> -->
 
-<section class="login-block">
+<!-- <section class="login-block">
     <div class="container shadow">
         <div class="row">
             <div class="col-md-4 login-sec">
@@ -66,4 +66,41 @@
             </div>
         </div>
     </div>
+</section> -->
+
+
+<section class="login-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 login-sec">
+                <h2 class="text-center">Bienvenue</h2>
+                <form class="login-form" #user="ngForm" (ngSubmit)="loginuser(user)">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="text-uppercase">Email</label>
+                        <input type="text" class="form-control" name="email" #email="ngModel" ngModel required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-uppercase">Mot de passe </label>
+                        <input type="password" class="form-control" name="password" #password="ngModel" ngModel required>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" class="btn btn-login width100">Se Connecter</button>
+                    </div>
+                    <p class="mt-4 text-center">Vous n'avez pas de compte?<a class="lnk-toggler ms-1" routerLink="/register">Créez-un</a></p>
+
+                </form>
+
+            </div>
+            <div class="col-md-8 banner-sec">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>

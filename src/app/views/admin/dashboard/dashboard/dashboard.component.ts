@@ -190,6 +190,6 @@ console.log(filtredusers.length)
   }
 
   ngOnInit(): void {
-    console.log(this.usersdata(13))
+
   }
 }

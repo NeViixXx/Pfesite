@@ -9,7 +9,7 @@
 
                     <div class="d-flex flex-wrap images" formArrayName="Images">
                         <div *ngFor="let preview of Images;index as i" [formGroupName]="i">
-                            <a class="float-end" (click)="delete(i)"> <i class="fas fa-minus-hexagon float-end"></i> </a>
+                            <a class="float-end" (click)="delete(i)"> <i class="fas fa-trash delete float-end"></i> </a>
                             <div class="card m-1">
                                 <img class="rounded" [src]="preview" height="150" width="150">
 

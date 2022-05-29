@@ -1,7 +1,13 @@
+import { HttpErrorResponse } from '@angular/common/http';
+import { NgToastService } from 'ng-angular-popup';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { ActivatedRoute} from '@angular/router';
+
 import { HttpService } from 'src/app/services/http.service';
+
+
+
 
 @Component({
   selector: 'app-page-formation',
@@ -13,9 +19,9 @@ export class PageFormationComponent implements OnInit {
   id:any
   dataFormation:any
 participer:any
-verif=0
 
-    constructor(private http:HttpService , private aroute:ActivatedRoute, private fb:FormBuilder) {
+
+    constructor(private http:HttpService , private aroute:ActivatedRoute, private fb:FormBuilder, private toast:NgToastService) {
       this.aroute.params.subscribe(data => this.id=data['id']);
 
       this.participer = this.fb.group({
@@ -50,6 +56,9 @@ verif=0
     }
 
 
+
+
+
     get email() {
       return this.participer.controls['email'];
   }
@@ -77,12 +86,11 @@ verif=0
     }
     add(){
       let data=this.participer.value
-
-      this.http.participer(data,this.id).subscribe(data =>  console.log("done"),
+      this.http.participer(data,this.id).subscribe(data =>  this.toast.success({detail:"Envoyée",summary:"Vous avez postulée a cette formations", duration:3000}),
       // The 2nd callback handles errors.
-      (err) => this.verif=2,
+      (err:HttpErrorResponse) => this.toast.error({detail:"Erreur",summary:err.error, duration:3000}),
       // The 3rd callback handles the "complete" event.
-      () => this.verif=1
+
       )
 
 

@@ -29,6 +29,10 @@
     left: 5%;
 }
 
+a {
+    text-decoration: none;
+}
+
 .login-sec {
     padding: 50px 30px;
     position: relative;

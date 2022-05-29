@@ -49,6 +49,7 @@
 nav {
     font: 1rem 'Roboto', sans-serif;
     z-index: 1000;
+    width: 100%;
 }
 
 .navbar-nav {
@@ -127,20 +128,6 @@ nav {
 .dropdown:hover .dropdown-menu a {
     padding: 8px 12px;
     text-decoration: none;
-}
-
-.fixed {
-    position: fixed;
-    width: 100%;
-    transition: 0.2s linear;
-    top: 0px;
-}
-
-.nofixed {
-    position: static;
-    background: transparent;
-    transition: 0.2s linear;
-    top: -50px;
 }
 
 

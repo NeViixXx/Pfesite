@@ -1,3 +1,5 @@
+import { NgToastModule } from 'ng-angular-popup';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
@@ -19,7 +21,13 @@ import {  ReactiveFormsModule } from '@angular/forms';
     PageFormationRoutingModule,
     ReactiveFormsModule,
     NgbModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    NgToastModule
+
+
+
+
   ]
 })
 export class PageFormationModule { }

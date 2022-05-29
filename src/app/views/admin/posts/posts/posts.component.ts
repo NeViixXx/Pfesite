@@ -20,7 +20,7 @@ dataPost={
   Comments: any[] =[]
   userprofile:any
 singlepost:any
-imageUrl: string = '';
+imageUrl:string='';
   selectedFiles?: FileList;
   Images: string[] = [];
   constructor(private http:HttpService , private userdata:AuthuserService) {
@@ -41,6 +41,7 @@ imageUrl: string = '';
     this.dataPost.Images=Images
     this.dataPost.Description=Description
     this.dataPost.id=id
+    this.imageUrl=this.dataPost.Images[0]
     this.http.getsinglepost(this.dataPost.id).subscribe(data => {this.singlepost=data
       this.Comments=this.singlepost.Comments
 

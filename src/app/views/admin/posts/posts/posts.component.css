@@ -13,12 +13,8 @@
 }
 
 .blog-card a {
-    color: inherit;
+    color: #dc3545;
     cursor: pointer;
-}
-
-.blog-card a:hover {
-    color: #ee3838;
 }
 
 .blog-card:hover .photo {

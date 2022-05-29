@@ -1,4 +1,5 @@
 <header class="container mt-5">
+
     <h1 class="text-center">{{dataFormation?.name}}</h1>
     <div class="d-flex flex-wrap">
 
@@ -16,9 +17,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <div class="modal-title">
-                            <h2>Postuler a {{dataFormation?.name}}</h2>
+                            <h2 class="text-center">Postuler a {{dataFormation?.name}}</h2>
                         </div>
-                        <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <form [formGroup]="participer" (ngSubmit)="add()">
 
@@ -77,24 +78,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn " data-bs-target="#exampleModalToggle2" data-bs-dismiss="modal" id="btn" [disabled]="participer.invalid"><span>Save changes</span></button>
-
-                            <main class="done " *ngIf="verif==1 ">
-                                <div class="swal2-icon swal2-success swal2-animate-success-icon " style="display: flex; ">
-                                    <div class="swal2-success-circular-line-left " style="background-color: rgb(255, 255, 255); "></div>
-                                    <span class="swal2-success-line-tip "></span>
-                                    <span class="swal2-success-line-long "></span>
-                                    <div class="swal2-success-ring "></div>
-                                    <div class="swal2-success-fix " style="background-color: rgb(255, 255, 255); "></div>
-                                    <div class="swal2-success-circular-line-right " style="background-color: rgb(255, 255, 255); "></div>
-                                </div>
-                                <p class="text-center ">Condidiature envoyée</p>
-                            </main>
-                            <main class="done " *ngIf="verif==2 ">
-                                <div class="swal2-icon swal2-error swal2-animate-error-icon " style="display: flex; "><span class="swal2-x-mark "><span class="swal2-x-mark-line-left "></span><span class="swal2-x-mark-line-right "></span></span>
-                                </div>
-                                <p class="text-center ">Échec</p>
-                            </main>
+                            <button type="submit" class="btn " data-bs-target="#exampleModalToggle2" data-bs-dismiss="modal" id="btn" [disabled]="participer.invalid"><span>Postuler</span></button>
                         </div>
                     </form>
                 </div>

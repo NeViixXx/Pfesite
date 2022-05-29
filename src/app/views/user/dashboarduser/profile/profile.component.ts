@@ -16,7 +16,6 @@ userprofile:any
 
     this.user = this.userdata.getdata('user')
     this.user = JSON.parse(this.user)
-console.log(this.user._id)
     this.userdata.getprofile().subscribe(data => {
       this.userprofile=data
       this.img=this.userprofile.avatar

@@ -1,5 +1,5 @@
     /* The CSS Styles for Hexagon Shaped Image */
-
+    
     .hex {
         margin: 0 auto;
         width: 180px;
@@ -14,7 +14,7 @@
         justify-content: center;
     }
     /* outline */
-
+    
     .hex-background {
         position: relative;
         background-color: white;
@@ -30,7 +30,7 @@
         clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     }
     /* outline */
-
+    
     .hex img {
         position: absolute;
         width: 100%;
@@ -38,42 +38,42 @@
         object-fit: fill;
         clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     }
-
+    
     .contenu {
         justify-content: center;
         text-align: center;
         align-items: center;
         margin-top: 1rem;
     }
-
+    
     i {
         font-size: 35px;
         color: #0073BF;
     }
-
+    
     a {
         text-decoration: none;
     }
-
+    
     .add {
         font-size: 35px;
         color: #0073BF;
     }
-
+    
     i {
         cursor: pointer;
     }
-
+    
     .actions {
         font-size: 20px;
     }
-
+    
     .delete {
-        color: #da1d1d;
+        color: #dc3545;
         font-size: 20px;
     }
-
+    
     .edit {
-        color: #4eb91c;
+        color: #28a745;
         font-size: 20px;
     }

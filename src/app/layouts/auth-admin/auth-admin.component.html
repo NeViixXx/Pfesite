@@ -1,43 +1,77 @@
-<div class="container">
+<!-- <div class="container">
 
-    <!-- Outer Row -->
+
     <div class="row justify-content-center">
 
         <div class="col-xl-10 col-lg-12 col-md-9">
 
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0">
-                    <!-- Nested Row within Card Body -->
-                    <div class="row">
-                        <div class="col-lg-6 d-none d-lg-block bg-login-image">
 
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="p-5">
-                                <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
-                                </div>
-                                <form class="user" #admin="ngForm" (ngSubmit)="loginadmin(admin)">
-                                    <div class=" form-group ">
-
-                                        <input type="text" class="form-control form-control-user " name="Identifiant" placeholder="Identifiant" #Identifiant="ngModel" ngModel required>
-                                    </div>
-                                    <div class="form-group ">
-
-                                        <input type="password" class="form-control form-control-user " name="password" placeholder="Mot de passe" #password="ngModel" ngModel required>
-                                    </div>
-                                    <button class="btn btn-primary m-3 " role="submit " [disabled]="admin.invalid">Se Connecter</button>
-                                </form>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+<div class="row">
+    <div class="col-lg-6 d-none d-lg-block bg-login-image">
 
     </div>
+    <div class="col-lg-6">
+        <div class="p-5">
+            <div class="text-center">
+                <h1 class="h4 text-gray-900 mb-4">Welcome!</h1>
+            </div>
+            <form class="user" #admin="ngForm" (ngSubmit)="loginadmin(admin)">
+                <div class=" form-group ">
+
+                    <input type="text" class="form-control form-control-user " name="Identifiant" placeholder="Identifiant" #Identifiant="ngModel" ngModel required>
+                </div>
+                <div class="form-group ">
+
+                    <input type="password" class="form-control form-control-user " name="password" placeholder="Mot de passe" #password="ngModel" ngModel required>
+                </div>
+                <button class="btn btn-primary m-3 " role="submit " [disabled]="admin.invalid">Se Connecter</button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+</div>
+</div>
 
 </div>
+
+</div>
+
+</div> -->
+
+<section class="login-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 login-sec">
+                <h2 class="text-center">Bienvenue Admin</h2>
+                <form class="login-form" #admin="ngForm" (ngSubmit)="loginadmin(admin)">
+                    <div class="form-group">
+                        <label for="exampleInputIdentifiant1" class="text-uppercase">Identifiant</label>
+                        <input type="text" class="form-control" name="Identifiant" #Identifiant="ngModel" ngModel required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1" class="text-uppercase">Mot de passe </label>
+                        <input type="password" class="form-control" name="password" #password="ngModel" ngModel required>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <button type="submit" [disabled]="admin.invalid" class="btn btn-login width100">Se Connecter</button>
+                    </div>
+                </form>
+
+            </div>
+            <div class="col-md-8 banner-sec">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

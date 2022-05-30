@@ -135,7 +135,7 @@ h1 {
 
 @media screen and (max-width: 768px) {
     div {
-        margin-top: -80px;
+        margin-top: -100px;
     }
     div .title h1 {
         font-size: 24px;

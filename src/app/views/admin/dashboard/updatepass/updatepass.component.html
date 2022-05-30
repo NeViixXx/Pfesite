@@ -1,0 +1,17 @@
+<main class="d-flex justify-content-center m-3">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <form #f="ngForm" (ngSubmit)="update(f)">
+                <div class="">
+                    <label>Nouveau mot de passe</label>
+                    <input type="password" class="form-control" name="password" #password="ngModel" ngModel required>
+                    <label>Confirmer mot de passe</label>
+                    <input type="password" class="form-control" name="confpass" #confpass="ngModel" ngModel required>
+                </div>
+                <div>
+                    <button class="btn btn-primary float-end mt-2" [disabled]="f.invalid" type="submit">Modifier</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

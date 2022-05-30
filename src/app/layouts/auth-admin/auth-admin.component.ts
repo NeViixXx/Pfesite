@@ -24,14 +24,11 @@ url:any
   }
 loginadmin(admin:any){
 let data = admin.value
-console.log(data)
 this.auth.login(data).subscribe(response =>
   {this.datarecive=response
     this.auth.Savedata(this.datarecive.token)
-    console.log(this.datarecive)
     this.route.navigate([this.url])
   }
-
 , err=> console.log(err))
 }
 }

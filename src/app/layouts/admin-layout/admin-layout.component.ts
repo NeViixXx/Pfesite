@@ -16,7 +16,6 @@ export class AdminLayoutComponent implements OnInit {
   constructor(private http : HttpService , private route:Router , private auth:AuthadminService) {
 
     this.http.getallcategory().subscribe(data => this.Category=data);
-console.log(this.auth.LoggedIn())
   }
 
 

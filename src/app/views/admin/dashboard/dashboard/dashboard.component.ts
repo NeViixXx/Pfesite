@@ -96,7 +96,7 @@ export class DashboardComponent implements OnInit {
           moment(val.createdAt).format('D/MM/YYYY') === this.datechart(i)
       );
         const usersnumber=filtredusers.length
-console.log(filtredusers.length)
+
       return usersnumber
 
 

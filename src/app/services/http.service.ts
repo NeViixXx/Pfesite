@@ -162,5 +162,9 @@ getallusers(){
 deleteusers(id:any){
   return this.http.delete(`http://localhost:1000/user/`+id,{headers:this.headerAdmin})
 }
+
+updatepass(data:any){
+  return this.http.put(`http://localhost:1000/admin`,data,{headers:this.headerAdmin})
+}
 }
 

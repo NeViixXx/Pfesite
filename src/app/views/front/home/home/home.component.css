@@ -31,7 +31,8 @@ section {
 }
 
 .titles {
-    margin-top: -180px;
+    margin-top: -300px;
+    margin-right: 60px;
 }
 
 button {
@@ -118,6 +119,7 @@ button {
         padding-bottom: -100px;
     }
     .titles {
+        text-align: center;
         margin-top: -50px;
     }
 }

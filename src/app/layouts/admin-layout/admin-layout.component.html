@@ -17,7 +17,7 @@
                         <a routerLink="/admin/Services"><i  class="fas fa-folder-tree me-2"></i>Services</a>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-book me-2"></i>
+                        <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false"><i class="fas fa-book me-2"></i>
                       Formations</a>
                         <ul class="collapse list-unstyled" id="pageSubmenu" *ngFor="let e of Category ">
                             <li>
@@ -36,13 +36,14 @@
                     </li>
 
                     <li>
-                        <a routerLink="/admin/Offres/Condidats"><i class="fas fa-user-group me-2"></i>Condidats</a>
+                        <a routerLink="/admin/Offres/Condidats"><i class="fas fa-users me-2"></i>Condidats</a>
                     </li>
                     <li>
                         <a routerLink="/admin/Posts"><i class="fas fa-clipboard me-2"></i>Postes</a>
                     </li>
-
-
+                    <li>
+                        <a routerLink="/admin/dashboard/Update"><i class="fas fa-gear me-2"></i>Mot de passe</a>
+                    </li>
                     <li>
                         <a routerLink="/" class="" (click)="logout()"><i
             class="fas fa-sign-out-alt fa-sm fa-fw me-2"></i>Déconnexion</a>
@@ -58,6 +59,7 @@
             <i class="fas fa-align-left"></i>
         </button>
             <router-outlet></router-outlet>
+            <lib-ng-toast></lib-ng-toast>
         </div>
     </div>
 

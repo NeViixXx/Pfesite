@@ -187,31 +187,6 @@ nav {
     transition: background 0s;
 }
 
-
-/* .btn {
-    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    margin-right: 80px;
-    margin-left: 100px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    transition: all 0.3s ease;
-    overflow: hidden;
-}
-
-.btn:hover {
-    transition: 1s ease-in-out;
-    background: #0073BF;
-}
-
-.btn span {
-    color: white;
-    font-size: 18px;
-    font-weight: 100;
-} */
-
 *,
 *:before,
 *:after {
@@ -280,21 +255,6 @@ h2 {
     color: #dddddd;
 }
 
-@media screen and (min-width: 600px) {
-    .r-footer>* {
-        flex: 1;
-    }
-    .features {
-        flex-grow: 1;
-    }
-    .l-footer {
-        flex: 1 0px;
-    }
-    .r-footer {
-        flex: 1 0px;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .r-footer>* {
         flex: 1;
@@ -310,6 +270,12 @@ h2 {
     }
     .plce {
         margin-left: -20px;
+    }
+    a {
+        margin-left: 40px;
+    }
+    .btn {
+        margin-left: 50px;
     }
 }
 

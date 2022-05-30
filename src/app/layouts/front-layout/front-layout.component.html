@@ -3,9 +3,9 @@
         <div class="container-fluid plce ">
             <a class="navbar-brand ms-5" href="#"><img width="160" src="../../../assets/logo.png" alt=""></a>
             <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon"></span>
 
-    </button>
+  </button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav flex-grow-1 overflow navbar-nav-scroll align-self-center me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -16,16 +16,16 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" (click)="toServices()" href="#service" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}" id="navbarDropdown">
-    Services
-  </a>
+  Services
+</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li *ngFor="let e of Services "><a class="dropdown-item" href="/Services/{{e._id}}">{{e.name}}</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" (click)="toFormations()" href="#formations" id="navbarDropdown" [routerLinkActive]="'active'" [routerLinkActiveOptions]="{exact:true}">
-    Formations
-  </a>
+  Formations
+</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li *ngFor="let e of Category ">
                                 <a class="dropdown-item" href="/Category/{{e.name}}" [routerLinkActive]="'active'">{{e.name}}</a>
@@ -50,14 +50,14 @@
                                 </a>
                                 <div class="dropdown-content">
                                     <a routerLink="/user">
-                                  Dashboard
-                                </a>
+                                Dashboard
+                              </a>
                                     <a routerLink="/user/profile">
-                              Mon profile
-                            </a>
+                            Mon profile
+                          </a>
                                     <a routerLink="/" class="" (click)="logout()">
-                              Déconnexion
-                            </a>
+                            Déconnexion
+                          </a>
                                 </div>
                             </li>
                         </ul>
@@ -74,10 +74,7 @@
 
 <router-outlet>
 </router-outlet>
-
 <lib-ng-toast></lib-ng-toast>
-
-
 
 
 

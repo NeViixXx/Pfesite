@@ -14,7 +14,7 @@ import { HttpService } from 'src/app/services/http.service';
 
 export class PageoffresComponent implements OnInit {
 Offres : any
-
+p=0
 
 
 

@@ -5,7 +5,7 @@
             <div class="photo" style="background-image: url({{e.Images[0]}})"></div>
         </div>
         <div class="description">
-            <h3>{{e.name}}</h3>
+            <h3 class="fw-bold">{{e.name}}</h3>
             <p> {{e.Description}}</p>
             <p class="read-more">
                 <a data-bs-toggle="modal" (click)="getdata(e.name,e.Images,e.Description,e._id,e.Comments)" data-bs-target="#staticBackdrop">Voir plus </a>
@@ -56,10 +56,13 @@
 
 
                             </div>
-                            <form #f="ngForm">
+                            <form #f="ngForm" (submit)="addcomment(f)">
                                 <div class="d-flex m-1">
                                     <img class="rounded me-2" height="40" width="40" src="{{userprofile?.avatar}}">
-                                    <input type="text" (keydown.enter)="addcomment(f)" class=" form-control " placeholder="Saisir votre commentaire " name="commentaire" #commentaire="ngModel" required ngModel>
+                                    <div class="input-group mb-3 ">
+                                        <input type="text" (keydown.enter)="addcomment(f)" class=" form-control " placeholder="Saisir votre commentaire " name="commentaire" #commentaire="ngModel" required ngModel>
+                                        <button class="btn btn-outline-light bg-light" type="submit" id="button-addon2"><i class="fas fa-location-arrow"></i></button>
+                                    </div>
                                 </div>
                             </form>
 

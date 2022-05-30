@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageOffresRoutingModule } from './page-offres-routing.module';
@@ -18,7 +20,9 @@ import { CondidiatureComponent } from './condidiature/condidiature.component';
   imports: [
     CommonModule,
     PageOffresRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule,
+    NgxPaginationModule
 
   ]
 })

@@ -72,35 +72,20 @@ export class AddpostComponent implements OnInit {
   }
 
 
-//   onFileChange(e:any) {
-//     this.selectedvidFiles = e.target.files;
-//     this.Videos=[]
-//     if (this.selectedvidFiles && this.selectedvidFiles[0]) {
-//       const numberOfFiles = this.selectedvidFiles.length;
-//       for (let i = 0; i < numberOfFiles; i++) {
-//         const reader = new FileReader();
-//         reader.onload = (e: any) => {
-//           this.Videos.push(e.target.value);
-//         };
-//         reader.readAsDataURL(this.selectedvidFiles[i]);
-//       }
-//     }
-// }
+
 
 delete(i:any){
   this.Images.splice(i,1)
     }
 
-    // deletevid(i:any){
-    //   this.Videos.slice(i,1)
-    //     }
+
 
 
         add(){
 
           let data=this.addpost.value
           data.Images=this.Images
-          // data.Videos=this.Videos
+
           console.log(data)
           this.http.addpost(data).subscribe(data => console.log(data),
          (err) => console.log(err))

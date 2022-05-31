@@ -1,3 +1,5 @@
+import { ResetpasswordComponent } from './layouts/resetpassword/resetpassword.component';
+import { EmailComponent } from './layouts/email/email.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GuardadminGuard } from './guards/guardadmin.guard';
@@ -17,6 +19,8 @@ const routes: Routes = [
     {path:'Category/:name',loadChildren:()=>import('./views/front/page-formation/page-formation.module').then(m=>m.PageFormationModule)},
     {path:'register',component:RegisterComponent},
     {path:'login',component:AuthUserComponent},
+    {path:'forgot-password',component:EmailComponent},
+    {path:'password/reset/:token',component:ResetpasswordComponent},
   ]},
 
 

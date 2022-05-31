@@ -1,0 +1,7 @@
+<div class="wrapper">
+    <form class="form-signin shadow-lg" #f="ngForm" (ngSubmit)="mail(f)">
+        <h2 class="form-signin-heading text-center">Entrer votre email</h2>
+        <input type="text" class="form-control" name="email" #email="ngModel" ngModel placeholder="Adresse email" required autofocus />
+        <div class="d-flex justify-content-center m-2"><button class="btn btn-primary" type="submit">Envoyer</button></div>
+    </form>
+</div>

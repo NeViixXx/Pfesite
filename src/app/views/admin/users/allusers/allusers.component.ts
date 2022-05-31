@@ -16,8 +16,8 @@ p:number=0
   }
 delete(id:any,i:any){
 this.http.deleteusers(id).subscribe(data =>
-  {this.usersdata.splice(i,1)
-  console.log("done")}
+  this.usersdata.splice(i,1)
+
   )
 }
   ngOnInit(): void {

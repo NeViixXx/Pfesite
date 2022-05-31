@@ -1,73 +1,5 @@
-<!-- <div class="container">
-
-    <div class="col-lg-12 m-5 d-flex">
-        <div class="card col-lg-6 m-5 pt-5 pb-5">
-            <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">Bienvenue</h1>
-            </div>
-            <form class="user" class="m-5" #user="ngForm" (ngSubmit)="loginuser(user)">
-                <div class="form-group m-2">
-                    <label for="email">Email : </label>
-                    <input type="text" class="form-control form-control-user " name="email" placeholder="Email" #email="ngModel" ngModel required>
-                </div>
-                <div class="form-group m-2">
-                    <label for="password">Mot de passe : </label>
-                    <input type="password" class="form-control form-control-user " name="password" placeholder="Mot de passe" #password="ngModel" ngModel required>
-                </div>
-                <button class="btn btn-primary m-2 float-end" role="submit " [disabled]="user.invalid">Se Connecter</button>
-            </form>
-        </div>
-        <div class="col-lg-6 m-5 pt-5 pb-5">
-            <h1>Vous n'avez pas de compte?</h1>
-            <button class="btn btn-primary " routerLink="/register">Créez un</button>
-        </div>
-    </div>
-
-</div> -->
-
-<!-- <section class="login-block">
-    <div class="container shadow">
-        <div class="row">
-            <div class="col-md-4 login-sec">
-                <h2 class="text-center">Bienvenue</h2>
-
-                <form class="login-form" #user="ngForm" (ngSubmit)="loginuser(user)">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Email : </label>
-                        <input type="text" class="form-control" name="email" placeholder="Email" #email="ngModel" ngModel required />
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Mot de passe :</label>
-                        <input type="password" class="form-control" name="password" placeholder="Mot de passe" #password="ngModel" ngModel required />
-                    </div>
-
-                    <div class="form-check d-flex justify-content-center">
-                        <button type="submit" class="btn float-right">Connecter</button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-8 banner-sec">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item active">
-                            <img class="d-block img-fluid" src="https://static.pexels.com/photos/33972/pexels-photo.jpg" alt="First slide" />
-                            <div class="carousel-caption d-none d-md-block">
-                                <div class="banner-text">
-                                    <h2>This is Heaven</h2>
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    </p>
-                                    <a routerLink="/register">Créez un</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<lib-ng-toast></lib-ng-toast>
+<lib-ng-toast>
+</lib-ng-toast>
 
 
 <section class="login-block">
@@ -88,6 +20,7 @@
                     <div class="form-group mt-3">
                         <button type="submit" [disabled]="user.invalid" class="btn btn-login width100">Se Connecter</button>
                     </div>
+                    <p class="mt-4 text-center"><a class="lnk-toggler text-center mt-5" routerLink="/forgot-password">Mot de passe oubliée?</a></p>
                     <p class="mt-4 text-center">Vous n'avez pas de compte?<a class="lnk-toggler ms-1" routerLink="/register">Créez-un</a></p>
 
                 </form>

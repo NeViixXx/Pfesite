@@ -163,8 +163,22 @@ deleteusers(id:any){
   return this.http.delete(`http://localhost:1000/user/`+id,{headers:this.headerAdmin})
 }
 
+deletecomment(idpost:any,commentid:any,i:any){
+  return this.http.post(`http://localhost:1000/posts/delete/`+idpost,{commentid},{headers:this.headerAdmin})
+}
+
 updatepass(data:any){
   return this.http.put(`http://localhost:1000/admin`,data,{headers:this.headerAdmin})
 }
+
+forgotpass(data:any){
+  return this.http.post("http://localhost:1000/user/password/forgot",data)
+}
+
+resetpass(data:any,token:any){
+  return this.http.put(`http://localhost:1000/user/password/reset/`+token,data)
+}
+
+
 }
 

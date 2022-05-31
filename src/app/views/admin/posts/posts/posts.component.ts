@@ -23,12 +23,11 @@ singlepost:any
 imageUrl:string='';
   selectedFiles?: FileList;
   Images: string[] = [];
+idcomm:any
   constructor(private http:HttpService , private userdata:AuthuserService) {
       this.http.getpost().subscribe(data => {this.posts=data
       })
-      this.userdata.getprofile().subscribe(data => {
-        this.userprofile=data
-      })
+
 
   }
 
@@ -45,9 +44,18 @@ imageUrl:string='';
     this.http.getsinglepost(this.dataPost.id).subscribe(data => {this.singlepost=data
       this.Comments=this.singlepost.Comments
 
+
     })
       }
 
+
+      deletecomment(id:any,commentid:any,i:any){
+        this.http.deletecomment(id,commentid,i).subscribe(data =>
+          {this.Comments.splice(i,1)
+            console.log(id,commentid,i)
+          console.log("done")}
+          )
+        }
 
       delete(id:any,i:any){
        this.http.deletepost(id).subscribe(Response => this.posts.splice(i,1));

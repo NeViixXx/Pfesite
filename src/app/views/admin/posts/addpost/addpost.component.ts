@@ -82,11 +82,8 @@ delete(i:any){
 
 
         add(){
-
           let data=this.addpost.value
           data.Images=this.Images
-
-          console.log(data)
           this.http.addpost(data).subscribe(data => console.log(data),
          (err) => console.log(err))
 

@@ -10,6 +10,8 @@ import { AuthAdminComponent } from './auth-admin/auth-admin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthUserComponent } from './auth-user/auth-user.component';
 import { RegisterComponent } from './register/register.component';
+import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
+import { EmailComponent } from './email/email.component';
 
 
 
@@ -26,6 +28,8 @@ import { RegisterComponent } from './register/register.component';
     AuthAdminComponent,
     AuthUserComponent,
     RegisterComponent,
+    ResetpasswordComponent,
+    EmailComponent,
 
 
   ],

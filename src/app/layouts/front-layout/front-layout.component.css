@@ -38,12 +38,10 @@
     display: block;
 }
 
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
 nav {
     font: 1rem 'Roboto', sans-serif;
     z-index: 1000;
+    width: 100%;
 }
 
 .navbar-nav {

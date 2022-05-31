@@ -1,7 +1,7 @@
 <h1 class="text-center text-primary">Tous les Utilisateurs</h1>
 <div class="card shadow">
-    <div class="card-body">
-        <table class="table table-responsive">
+    <div class="card-body table-responsive">
+        <table class="table " id="dataTable" width="100%" cellspacing="0">
             <thead>
                 <th scope="col">#</th>
                 <th scope="col">Image</th>
@@ -26,6 +26,6 @@
             </tbody>
         </table>
     </div>
-    <ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="usersdata?.length"></ngb-pagination>
+    <ngb-pagination class="d-flex justify-content-center" [(page)]="p" [pageSize]="20" [collectionSize]="usersdata?.length"></ngb-pagination>
 
 </div>

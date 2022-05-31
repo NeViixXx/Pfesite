@@ -157,6 +157,11 @@ input {
     color: #0073BF;
 }
 
+.add {
+    font-size: 35px;
+    color: #0073BF;
+}
+
 .comments {
     background-color: rgb(228, 228, 228);
 }

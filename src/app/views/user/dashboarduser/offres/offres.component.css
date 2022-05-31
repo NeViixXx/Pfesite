@@ -81,6 +81,10 @@
     max-width: 100%;
 }
 
+i {
+    font-size: 20px;
+}
+
 @media (max-width: 640px) {
     .blog-card {
         flex-direction: row;

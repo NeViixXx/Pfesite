@@ -1,6 +1,6 @@
 <div class="container">
     <h1 class="text-center"> Tous les postes</h1>
-    <a class="btn btn-primary float-end mb-2" routerLink="/admin/Posts/ajout"><i class="fas fa-plus"></i></a>
+    <a class="float-end mb-2 add" style="font-size: 60;" routerLink="/admin/Posts/ajout"><i class="fas fa-plus"></i></a>
     <div class="blog-card" *ngFor="let e of posts | paginate: { itemsPerPage: 5, currentPage: p };index as i">
         <div class="meta">
             <div class="photo" style="background-image: url({{e.Images[0]}})"></div>
@@ -49,7 +49,7 @@
                         <div class="m-3 description col-lg-4">
                             <h1>{{dataPost.name}}</h1>
                             <p>{{dataPost.Description}}</p>
-                            <div class="comments p-2 rounded">
+                            <div class="comments p-2 rounded" *ngIf="Comments.length>0">
                                 <div *ngIf="Comments.length>0">
                                     <p>Commentaires</p>
                                     <div *ngFor="let comm of Comments ; index as i ">

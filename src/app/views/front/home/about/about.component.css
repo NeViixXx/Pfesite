@@ -114,25 +114,6 @@ h1 {
     margin-top: 30px;
 }
 
-
-/*
-.content-section .content .button a {
-    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 40px;
-    text-decoration: none;
-    font-size: 18px;
-    letter-spacing: 1.5px;
-}
-
-.content-section .content .button a:hover {
-    transition: .5s ease-in-out;
-    background: #0073BF;
-    transform: scale(1.05);
-} */
-
 @media screen and (max-width: 768px) {
     div {
         margin-top: -100px;
@@ -150,16 +131,6 @@ h1 {
     .content-section .content p {
         font-size: 16px;
     }
-    /* .content-section .content .button a {
-        background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-        color: white;
-        border: none;
-        border-radius: 10px;
-        padding: 12px 40px;
-        text-decoration: none;
-        font-size: 16px;
-        letter-spacing: 1.5px;
-    } */
     .container {
         width: 80%;
         display: block;

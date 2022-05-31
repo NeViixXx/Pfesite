@@ -27,7 +27,6 @@ h1 {
     height: 250px;
     max-width: 1200px;
     position: relative;
-    /* width * 0.866 */
     background: #00C4FF;
     box-sizing: border-box;
     clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
@@ -35,26 +34,15 @@ h1 {
     justify-content: center;
 }
 
-
-/* outline */
-
 .hex-background {
     position: relative;
     background-color: white;
-    /*color of the main-background*/
     top: 4px;
-    /* equal to border thickness */
     left: 4px;
-    /* equal to border thickness */
     width: 292px;
-    /* container height - (border thickness * 2) */
     height: 242px;
-    /* container height - (border thickness * 2) */
     clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
-
-
-/* outline */
 
 .hex img {
     position: absolute;

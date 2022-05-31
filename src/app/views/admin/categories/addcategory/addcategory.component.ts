@@ -33,7 +33,7 @@ verif=0
   addcat(cat:any){
     let data=cat.value
     data.Image=this.img
-    this.http.addcategory(data).subscribe((data) => {console.log(data)
+    this.http.addcategory(data).subscribe((data) => {
       this.route.navigate([`/admin/Catégories`])},
     // The 2nd callback handles errors.
     (err) => this.verif=2,

@@ -11,8 +11,7 @@ usersdata:any
 p:number=0
   constructor(private http:HttpService) {
     this.http.getallusers().subscribe(data => {
-      this.usersdata=data
-      console.log(data)})
+      this.usersdata=data})
   }
 delete(id:any,i:any){
 this.http.deleteusers(id).subscribe(data =>

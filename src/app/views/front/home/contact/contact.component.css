@@ -175,28 +175,6 @@ button:hover svg {
     transition: background 0s;
 }
 
-
-/* .btn {
-    background: linear-gradient(90deg, rgba(0, 196, 255, 1) 0%, rgba(0, 115, 191, 1) 100%);
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    transition: .5s ease-in-out;
-    background: #0073BF;
-    transform: scale(1.05);
-} */
-
 @media (max-width: 950px) {
     .container {
         width: 90%;
@@ -231,9 +209,6 @@ button:hover svg {
         margin-left: 0;
     }
 }
-
-
-/* /// */
 
 @-webkit-keyframes swal2-show {
     0% {

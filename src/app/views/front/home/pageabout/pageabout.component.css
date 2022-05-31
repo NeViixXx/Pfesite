@@ -24,6 +24,7 @@ ul li>i {
 .anis {
     width: 300px;
     margin: 5%;
+    clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
 }
 
 .TEMOIGNAGES {

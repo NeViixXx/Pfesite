@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-2">
     <form [formGroup]="addpost" (ngSubmit)="add()">
         <div class="card shadow">
             <div class="card-body d-flex">
@@ -6,32 +6,14 @@
                     <h2 class="text-center fw-bold">Médias</h2>
                     <h3>Images</h3>
                     <input type="file" multiple (change)="selectImages($event)" accept="image/*" class="form-control m-2" required>
-
                     <div class="d-flex flex-wrap images" formArrayName="Images">
                         <div *ngFor="let preview of Images;index as i" [formGroupName]="i">
                             <a class="float-end" (click)="delete(i)"> <i class="fas fa-trash delete float-end"></i> </a>
                             <div class="card m-1">
                                 <img class="rounded" [src]="preview" height="150" width="150">
-
                             </div>
-
                         </div>
                     </div>
-                    <!-- <h3>Videos</h3>
-                    <input type="file" multiple (change)="onFileChange($event)" class="form-control m-2" accept="video/*" formControlName="Videos">
-                    <div formArrayName="Videos">
-                        <div *ngFor="let vid of addpost.controls.Videos['controls'];index as i" [formGroupName]="i">
-                            <div class="card m-1">
-                                <div class="d-flex">
-                                    <video width="270" height="220" controls disabled="true">
-                                    <source [src]="vid" type="video/*">
-                                  </video> {{vid.name}}
-                                    <a (click)="deletevid(i)" class="float-end"> <i class="bi bi-x-circle-fill m-1 danger"></i> </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
                 </div>
                 <div class="card-body border m-1 ">
                     <h2 class="text-center fw-bold ">Information sur ce post</h2>
@@ -43,8 +25,7 @@
                         <label>Description</label>
                         <textarea type="text " class="form-control " placeholder="Description du post ... " formControlName="Description" required></textarea>
                     </div>
-                    <button type="submit " [disabled]="addpost.invalid" class="btn btn-primary ">Ajouter</button>
-
+                    <button type="submit " [disabled]="addpost.invalid" class="btn btn-primary float-end mt-2">Ajouter</button>
                 </div>
             </div>
         </div>

@@ -1,12 +1,7 @@
-/* The container <div> - needed to position the dropdown content */
-
 .dropdown {
     position: relative;
     display: inline-block;
 }
-
-
-/* Dropdown Content (Hidden by Default) */
 
 .dropdown-content {
     display: none;
@@ -18,9 +13,6 @@
     z-index: 1;
 }
 
-
-/* Links inside the dropdown */
-
 .dropdown-content a {
     color: black;
     padding: 8px 12px;
@@ -29,22 +21,13 @@
     cursor: pointer;
 }
 
-
-/* Change color of dropdown links on hover */
-
 .dropdown-content a:hover {
     background-color: #f1f1f1
 }
 
-
-/* Show the dropdown menu on hover */
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
 
 nav {
     font: 1rem 'Roboto', sans-serif;
@@ -129,11 +112,6 @@ nav {
     padding: 8px 12px;
     text-decoration: none;
 }
-
-
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
 
 .wrapper {
     display: flex;
@@ -227,21 +205,11 @@ ul ul a {
     padding-left: 30px !important;
 }
 
-
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-
 #content {
     width: 100%;
     min-height: 100vh;
     transition: all 0.3s;
 }
-
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
 
 @media (max-width: 768px) {
     #sidebar {

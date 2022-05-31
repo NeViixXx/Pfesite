@@ -45,7 +45,6 @@
         max-width: 1200px;
         position: absolute;
         z-index: -1;
-        /* width * 0.866 */
         background: #00C4FF;
         clip-path: polygon(25% 0%, 100% 0, 100% 50%, 100% 100%, 25% 100%, 0% 50%);
     }
@@ -60,7 +59,6 @@
         max-width: 1200px;
         position: absolute;
         z-index: -1;
-        /* width * 0.866 */
         background: #00C4FF;
         clip-path: polygon(0% 50%, 25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%);
     }
@@ -75,7 +73,6 @@
         max-width: 1200px;
         position: absolute;
         z-index: -1;
-        /* width * 0.866 */
         background: #00C4FF;
         clip-path: polygon(25% 0%, 100% 0, 100% 50%, 100% 100%, 25% 100%, 0% 50%);
     }

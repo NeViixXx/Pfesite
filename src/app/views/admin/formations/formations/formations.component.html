@@ -2,7 +2,7 @@
     {{name}}</h1>
 <div class="card shadow mb-4">
 
-    <div *ngIf="cat.length===0">
+    <div *ngIf="cat?.length===0">
         <h2 class="pas-formation text-center">pas de formations dans cette catégorie </h2>
     </div>
 
@@ -27,6 +27,6 @@
             </div>
         </div>
     </div>
-    <ngb-pagination class="d-flex justify-content-center " [(page)]="p " [pageSize]="6 " [collectionSize]="cat.length "></ngb-pagination>
+    <ngb-pagination class="d-flex justify-content-center " [(page)]="p " [pageSize]="6 " [collectionSize]="cat?.length "></ngb-pagination>
 
 </div>

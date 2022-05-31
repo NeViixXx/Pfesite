@@ -41,8 +41,8 @@
                         </li>
 
 
-                        <button *ngIf="!Logged && !adminlogged" class="btn" routerLink="/login"> Se Connecter </button>
-                        <ul *ngIf="Logged" class="nav">
+                        <button *ngIf="!Logged && !adminlogged" class="btn ms-1 me-4" routerLink="/login"> Se Connecter </button>
+                        <ul *ngIf="Logged" class="nav me-3">
                             <li class="dropdown">
                                 <a class="dropbtn d-flex" data-bs-toggle="dropdown" to="#">
                                     <h4 class="me-2 mt-3">{{userprofile?.fname}}</h4>
@@ -74,6 +74,7 @@
 
 <router-outlet>
 </router-outlet>
+
 <lib-ng-toast></lib-ng-toast>
 
 

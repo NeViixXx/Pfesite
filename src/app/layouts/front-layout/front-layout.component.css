@@ -185,12 +185,6 @@ nav {
     transition: background 0s;
 }
 
-*,
-*:before,
-*:after {
-    box-sizing: border-box;
-}
-
 .footer {
     display: flex;
     padding: 30px;
@@ -225,7 +219,6 @@ h2 {
 
 .r-footer {
     display: flex;
-    flex-flow: row wrap;
 }
 
 .r-footer>* {
@@ -249,7 +242,6 @@ h2 {
 }
 
 .l-footer p {
-    padding-right: 20%;
     color: #dddddd;
 }
 
@@ -264,13 +256,11 @@ h2 {
         flex: 1 0px;
     }
     .r-footer {
+        flex-flow: row wrap;
         flex: 1 0px;
     }
     .plce {
         margin-left: -20px;
-    }
-    a {
-        margin-left: 40px;
     }
     .btn {
         margin-left: 50px;

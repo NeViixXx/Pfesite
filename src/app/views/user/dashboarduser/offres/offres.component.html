@@ -1,7 +1,7 @@
 <div>
     <h1 class="text-center">Offres</h1>
     <div class="container">
-        <div class="alert alert-danger" *ngIf="Offres.length===0">
+        <div class="alert alert-danger" *ngIf="Offres?.length===0">
             <h2 class="text-center">Aucune offre pour le moment</h2>
         </div>
         <div class="blog-card" *ngFor="let e of Offres | paginate: { itemsPerPage: 5, currentPage: p } ;index as i  ">
@@ -22,6 +22,6 @@
                 </div>
             </div>
         </div>
-        <ngb-pagination *ngIf="Offres.length>5" class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="Offres?.length"></ngb-pagination>
+        <ngb-pagination *ngIf="Offres?.length>5" class="d-flex justify-content-center" [(page)]="p" [pageSize]="5" [collectionSize]="Offres?.length"></ngb-pagination>
     </div>
 </div>

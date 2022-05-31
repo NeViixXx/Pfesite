@@ -85,10 +85,6 @@
     .blog-card {
         flex-direction: row;
         max-width: 500px;
-        height: 300px;
-    }
-    .blog-card .meta {
-        flex-basis: 40%;
         height: auto;
     }
     .blog-card .description {

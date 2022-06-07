@@ -1711,33 +1711,3 @@ body.swal2-no-backdrop .swal2-shown.swal2-bottom-right {
     font-weight: 500;
     color: var(--color);
 }
-
-.btn:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    background: var(--color);
-    height: 150px;
-    width: 200px;
-    border-radius: 50%;
-}
-
-.btn:hover {
-    color: #fff;
-}
-
-.btn:before {
-    top: 100%;
-    left: 100%;
-    transition: all .7s;
-}
-
-.btn:hover:before {
-    top: -30px;
-    left: -30px;
-}
-
-.btn:active:before {
-    background: #0073BF;
-    transition: background 0s;
-}

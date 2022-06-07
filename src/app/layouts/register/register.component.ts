@@ -1,3 +1,4 @@
+import { NgToastService } from 'ng-angular-popup';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import {  Router } from '@angular/router';
@@ -17,7 +18,7 @@ register:any
 verif=0
 datarecive:any
 
-    constructor(private http:HttpService ,private auth:AuthuserService , private route:Router, private fb:FormBuilder) {
+    constructor(private http:HttpService ,private auth:AuthuserService , private route:Router, private fb:FormBuilder,private toast:NgToastService) {
 
 
       this.register = this.fb.group({
@@ -113,7 +114,8 @@ onFileSelected(event:any) {
     if (data.password === data.confpassword)
 {
     this.http.register(data).subscribe(resp =>  {
-      this.route.navigate(['/login'])})
+      this.route.navigate(['/login'])},
+      (err) => this.toast.error({detail:"Erreur", duration:3000}))
   }
 }
   ngOnInit(): void {

@@ -1,6 +1,6 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light  bg-light shadow-sm " (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
-        <div class="container-fluid plce ">
+        <div class="container plce">
             <a class="navbar-brand ms-5" href="#"><img width="160" src="../../../assets/logo.png" alt=""></a>
             <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -79,7 +79,7 @@
 
 
 
-<footer class="footer">
+<!-- <footer class="footer">
     <div class="l-footer">
 
         <img src="../../../assets/logo.png" width="160" alt="">
@@ -121,4 +121,40 @@
             </li>
 
     </ul>
+</footer> -->
+
+<footer class="footer">
+    <div class="footer-left col-md-4 col-sm-6">
+        <p class="about">
+            <span>  <img src="../../../assets/logo.png" width="200" alt=""></span> INTELLIGENT SECURITY IT est un cabinet indépendant spécialisé dans la sécurité de l'information. Composé de consultants ayant plusieurs décennies d'expérience dans le domaine
+            de la sécurité de l'information.
+        </p>
+
+    </div>
+    <div class="footer-center col-md-4 col-sm-6">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p>Jardin el menzah 2</p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i>
+            <p> +216 70 734 580</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:contact@intelligentsecurityit.com"> contact@intelligentsecurityit.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right col-md-4 col-sm-6">
+
+        <ul class="menu">
+            <li> <a href="#home"> Accueil</a> </li>
+            <li> <a href="#about"> A propos</a> </li>
+            <li><a href="#service"> Services</a> </li>
+            <li> <a href="#formations"> Formations</a> </li>
+            <li> <a href="#contact"> Contact</a> </li>
+            <li> <a routerLink="/Offres"> Rejoignez-nous</a> </li>
+        </ul>
+
+    </div>
 </footer>
